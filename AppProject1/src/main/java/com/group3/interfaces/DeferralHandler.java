@@ -2,13 +2,13 @@
 
 package com.group3.interfaces;
 
-/*This is the interface that the lecturer would implement*/
-public interface DeferralHandlerInterface {
+import com.group3.domain.SearchModel;
 
-	/*Returns a deferral object
-	 * I'm still not sure on what parameter to use as a search criteria
-	 * */
-	DeferralInterface searchDeferral();
+/*This is the interface that the lecturer would implement*/
+public interface DeferralHandler {
+
+	
+	DeferralInterface searchDeferral(SearchModel searchModel);
 	
 	/*
 	 * Assign deferral object to lecturer for processing.
@@ -16,10 +16,8 @@ public interface DeferralHandlerInterface {
 	 * */
 	int assignDeferral(DeferralInterface deferral);
 	
-	/*I'm still not sure what are the parameters for this. Should it be a text representing the lcation of the image file?
-	 * returns error code
-	 * */
-	int uploadSignedDeferral();
+	/*Edit the the deferral image from the unsigned version to the signed version*/
+	int createSignedDeferral(DeferralInterface deferral, String newAdress);
 	
 	/*
 	 * Email Signed deferral to admission office
@@ -27,6 +25,8 @@ public interface DeferralHandlerInterface {
 	 * 
 	 * */
 	int sendSignedDeferralToAdmission(DeferralInterface deferral);
+
+	
 }
 
 /*test

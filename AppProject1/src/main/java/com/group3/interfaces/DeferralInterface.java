@@ -6,5 +6,5 @@ public interface DeferralInterface {
 	/*
 	 * Set itself as assigned to a lecturer
 	 * */
-	int setToAssigned(DeferralHandlerInterface lecturer);
+	int setToAssigned(DeferralHandler lecturer);
 }
