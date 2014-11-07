@@ -64,6 +64,8 @@ public class Lecturer implements DeferralHandler{
 		
 		//assign the newly uploaded signed form to the deferral object
 		defferal_.setImageAddress(newImageAddress);
+		
+		//TODO ADD TO DB
 		return 0;
 	}
 
