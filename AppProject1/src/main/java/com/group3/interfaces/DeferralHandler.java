@@ -8,27 +8,26 @@ import com.group3.domain.SearchModel;
 public interface DeferralHandler {
 
 	
-	DeferralInterface searchDeferral(SearchModel searchModel);
+	Deferral searchDeferral(SearchModel searchModel);
 	
 	/*
 	 * Assign deferral object to lecturer for processing.
 	 * returns an error code
 	 * */
-	int assignDeferral(DeferralInterface deferral);
+	int assignDeferral(Deferral deferral);
 	
-	/*Edit the the deferral image from the unsigned version to the signed version*/
-	int createSignedDeferral(DeferralInterface deferral, String newAdress);
+	/*Edit the the deferral image location to point
+	 * from the unsigned version to the signed version*/
+	int createSignedDeferral(Deferral deferral, String newAdress);
 	
 	/*
-	 * Email Signed deferral to admission office
+	 * Email Signed deferral to admission office and set the variable isProccessed to true
 	 * returns error code
 	 * 
 	 * */
-	int sendSignedDeferralToAdmission(DeferralInterface deferral);
+	int sendSignedDeferralToAdmission(Deferral deferral);
 
+	
 	
 }
 
-/*test
- * test code
- * */

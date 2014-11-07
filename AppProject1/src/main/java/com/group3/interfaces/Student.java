@@ -5,7 +5,7 @@
 
 package com.group3.interfaces;
 
-public interface StudentInterface {
+public interface Student {
 
 	/*
 	 * Return an int which represents an error code
