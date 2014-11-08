@@ -19,7 +19,6 @@ public class LecturerSearchDeferralStrategy implements DeferralSearchStrategy{
 	public LecturerSearchDeferralStrategy()
 	{
 		deferralResult = new ArrayList<Deferral> ();
-
 	}
 	@Override
 	public Deferral Search(SearchModel model) {

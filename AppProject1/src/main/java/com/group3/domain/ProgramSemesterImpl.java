@@ -7,71 +7,206 @@ package com.group3.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import com.group3.interfaces.Program;
-import com.group3.interfaces.AcademicTerm;
+import com.group3.interfaces.Semester;
+import com.group3.interfaces.ProgramSemester;
+import com.group3.interfaces.Student;
 
 /**
  * @author Mikhail
  *
  */
-public class ProgramSemesterImpl {
+public class ProgramSemesterImpl implements ProgramSemester{
 	Program program;
-	AcademicTerm[] Semesters;
-    int YearNumber;
-	String ClassgroupName;
+	List<Semester> Semesters;
+    int yearNumber;
+	String classgroupName;
 	List<Student> students;
+	int ID;
 	
-	public List<Student> getStudents() {
-		return students;
-	}
 
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
+	//TODO implement database access
 
-	public ProgramSemesterImpl()
+	public ProgramSemesterImpl(List<Semester> SemesterList, String classgroupName, int yearNumber, Program program)
 	{
-		Semesters= new AcademicTerm[2];
+		this.Semesters= SemesterList;
+		this.classgroupName=classgroupName;
+		this.yearNumber=yearNumber;
+		this.program=program;
 		
 	}
 	
-	public int getYearNumber() {
-		return YearNumber;
-	}
-	public void setYearNumber(int yearNumber) {
-		YearNumber = yearNumber;
-	}
-	public AcademicTerm[] getSemesters() {
-		return Semesters;
-	}
-	public boolean setSemesters(AcademicTerm[] semesters) {
-		Semesters = semesters;
-		return true;
-	}
-	public void addSemester(AcademicTerm semester) {
-		//TODO implement exception out of bound handler.
-		
-		
-		//Semesters[Semesters.size] = semester;
-	}
-
-	public Program getProgram() {
-		return program;
-	}
-	public void setProgram(Program program) {
-		this.program = program;
-	}
-
-	public String getClassgroupName() {
-		
-		
-		return ClassgroupName;
-	}
+	
+	@Required
 	public void setClassgroupName(String classgroupName) {
-		//TODO implement a validation logic to make sure classgroupname in the format of
+		//TODO implement a validation logic to make sure classgroupName in the format of
 		//ProramCode_Y1 e.g DCOM_1
 		
-		ClassgroupName = classgroupName;
+		this.classgroupName = classgroupName;
 	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#updateStudents(java.util.List)
+	 */
+	@Override
+	public void updateStudents(List<Student> students) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#deleteStudent(int)
+	 */
+	@Override
+	public void deleteStudent(int ID) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#updateYearNumber(int)
+	 */
+	@Override
+	public void updateYearNumber(int yearNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#updateSemesters(java.util.List)
+	 */
+	@Override
+	public boolean updateSemesters(List<Semester> semesters) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#updateProgram(com.group3.interfaces.Program)
+	 */
+	@Override
+	public void updateProgram(Program program) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#deleteProgram(int)
+	 */
+	@Override
+	public void deleteProgram(int ID) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public String toString()
+	{
+	 return	"ID " + this.getID() + "groupName: " + classgroupName + "Year: " + yearNumber;	
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getStudents()
+	 */
+	@Override
+	public List<Student> getStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getYearNumber()
+	 */
+	@Override
+	public int getYearNumber() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#addSemester(com.group3.interfaces.Semester)
+	 */
+	@Override
+	public void addSemester(Semester semester) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#deleteSemester(int)
+	 */
+	@Override
+	public void deleteSemester(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getSemesters()
+	 */
+	@Override
+	public List<Semester> getSemesters() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getProgram()
+	 */
+	@Override
+	public Program getProgram() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getClassgroupName()
+	 */
+	@Override
+	public String getClassgroupName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#getID()
+	 */
+	@Override
+	public int getID() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	/* (non-Javadoc)
+	 * @see com.group3.interfaces.ProgramSemester#setID(int)
+	 */
+	@Override
+	public void setID(int ID) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 }

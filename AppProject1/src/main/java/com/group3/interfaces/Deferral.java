@@ -15,4 +15,6 @@ public interface Deferral {
 	public boolean isProccesed();
 	public boolean isProccesed(boolean state);
 	
+	public int getID();
+	public void setID(int iD);
 }

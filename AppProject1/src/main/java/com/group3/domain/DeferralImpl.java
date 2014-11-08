@@ -18,6 +18,16 @@ public class DeferralImpl implements Deferral{
 	Student Student;
 	List<Module> module;
 	boolean isProccesed = false;
+	int ID;
+	
+	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
 
 	public DeferralImpl(Student student)
 	{
@@ -52,6 +62,7 @@ public class DeferralImpl implements Deferral{
 	public boolean isProccesed(boolean state) {
 		return this.isProccesed = state;
 	}
+	@Override
 	public boolean isProccesed() {
 		return this.isProccesed;
 	}

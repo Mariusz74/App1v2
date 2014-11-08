@@ -3,17 +3,33 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="lecturerTest" class="com.group3.domain.Lecturer">
-		<constructor-arg name="Name" value="Mary's farm"></constructor-arg>
-		<constructor-arg name="ID" value="Mary has a little lamb, her fleece is white as snow"></constructor-arg>
+                                        
+
+<bean id="Program" class="com.group3.domain.ProgramImpl">
 		
-</bean>	                                
-           
-<bean id="deferralTest" class="com.group3.domain.DeferralImpl">
-		<constructor-arg name="lecTest" ref="lecturerTest"></constructor-arg>
+		<constructor-arg name="name" value="SoftDev"></constructor-arg>
+</bean>
+
+<bean id="classGroup" class="com.group3.domain.ProgramSemesterImpl">
+		<constructor-arg name="SemesterList" ref="Semesters"></constructor-arg>
+		<constructor-arg name="classgroupName" value="Dcom1"></constructor-arg>
+		<constructor-arg name="yearNumber" value="1"></constructor-arg>
+		<constructor-arg name="program" ref="Program"></constructor-arg>
+</bean>
 
 
-</bean>	   
+<bean id="Semesters" class="java.util.ArrayList">
+    <constructor-arg>
+        <list>
+            <ref bean="Semester1" />             
+        </list>
+    </constructor-arg>
+</bean>
+<bean id="Semester1" class="com.group3.domain.SemesterImpl">
+		<constructor-arg name="name" value="sem1"></constructor-arg>
+		<constructor-arg name="semesterNumber" value="4"></constructor-arg>
+</bean>
+
 
 </beans>
 
