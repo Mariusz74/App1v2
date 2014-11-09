@@ -54,10 +54,10 @@ public class ProgramImpl implements Program{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Program#updateProgramSemester(com.group3.interfaces.ProgramSemester)
+	 * @see com.group3.interfaces.Program#setProgramSemester(com.group3.interfaces.ProgramSemester)
 	 */
 	@Override
-	public void updateProgramSemester(ProgramSemester programSem) {
+	public void setProgramSemester(ProgramSemester programSem) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -81,10 +81,10 @@ public class ProgramImpl implements Program{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Program#updateName(java.lang.String)
+	 * @see com.group3.interfaces.Program#setName(java.lang.String)
 	 */
 	@Override
-	public void updateName(String name) {
+	public void setName(String name) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -108,10 +108,10 @@ public class ProgramImpl implements Program{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Program#updateID(int)
+	 * @see com.group3.interfaces.Program#setID(int)
 	 */
 	@Override
-	public void updateID(int ID) {
+	public void setID(int ID) {
 		// TODO Auto-generated method stub
 		
 	}

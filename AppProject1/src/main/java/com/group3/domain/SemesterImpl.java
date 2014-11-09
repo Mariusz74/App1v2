@@ -31,10 +31,10 @@ public class SemesterImpl implements Semester{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Semester#updateName(java.lang.String)
+	 * @see com.group3.interfaces.Semester#setName(java.lang.String)
 	 */
 	@Override
-	public void updateName(String name) {
+	public void setName(String name) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,10 +49,10 @@ public class SemesterImpl implements Semester{
 	}
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Semester#updateID(int)
+	 * @see com.group3.interfaces.Semester#setID(int)
 	 */
 	@Override
-	public void updateID(int iD) {
+	public void setID(int iD) {
 		// TODO Auto-generated method stub
 		
 	}

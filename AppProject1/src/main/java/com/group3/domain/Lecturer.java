@@ -37,7 +37,7 @@ public class Lecturer implements DeferralHandler{
 	 * */
 	@Override
 	public void assignDeferral(Deferral deferral) {
-		deferral.setToAssigned(this);
+		deferral.setLecturer(this);
 	}
 
 	@Override

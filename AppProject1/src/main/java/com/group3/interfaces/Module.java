@@ -10,7 +10,7 @@ package com.group3.interfaces;
  */
 public interface Module {
 	public String getModuleName();
-	public void updateModuleName(String moduleName);
+	public void setModuleName(String moduleName);
 	public String getModuleID();
-	public void updateModuleID(String moduleID);
+	public void setModuleID(String moduleID);
 }

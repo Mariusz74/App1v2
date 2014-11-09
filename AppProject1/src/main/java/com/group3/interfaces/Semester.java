@@ -10,10 +10,10 @@ package com.group3.interfaces;
  */
 public interface Semester {
 	public String getName();
-	public void updateName(String name);
+	public void setName(String name);
 	
 	public int getID();
-	public void updateID(int iD);
+	public void setID(int iD);
 	
 	public int getSemesterNumber();
 	public void updataeSemesterNumber(int semesterNumber);

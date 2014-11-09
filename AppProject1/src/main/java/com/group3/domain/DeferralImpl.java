@@ -20,50 +20,40 @@ public class DeferralImpl implements Deferral{
 	boolean isProccesed = false;
 	int ID;
 	
-	
-	public int getID() {
-		return ID;
+	public String getImageAddress() {
+		return imageAddress;
 	}
-
-	public void setID(int iD) {
-		ID = iD;
+	public void setImageAddress(String imageAddress) {
+		this.imageAddress = imageAddress;
 	}
-
-	public DeferralImpl(Student student)
-	{
-		this.Student=student;	
+	public DeferralHandler getLecturer() {
+		return lecturer;
 	}
-	
+	public void setLecturer(DeferralHandler lecturer) {
+		this.lecturer = lecturer;
+	}
+	public Student getStudent() {
+		return Student;
+	}
+	public void setStudent(Student student) {
+		Student = student;
+	}
 	public List<Module> getModule() {
 		return module;
 	}
 	public void setModule(List<Module> module) {
 		this.module = module;
 	}
-	public String getImageAddress() {
-		return imageAddress;
-	}
-
-	public void setImageAddress(String imageAddress) {
-		this.imageAddress = imageAddress;
-	}
-
-	public DeferralHandler getAssignedDeferralHandler() {
-		return lecturer;
-	}
-
-	@Override
-	public int setToAssigned(DeferralHandler lecturer) {
-		this.lecturer=lecturer;
-		return 0;
-	}
-	
-	@Override
-	public boolean isProccesed(boolean state) {
-		return this.isProccesed = state;
-	}
-	@Override
 	public boolean isProccesed() {
-		return this.isProccesed;
+		return isProccesed;
+	}
+	public void setProccesed(boolean isProccesed) {
+		this.isProccesed = isProccesed;
+	}
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
 	}
 }

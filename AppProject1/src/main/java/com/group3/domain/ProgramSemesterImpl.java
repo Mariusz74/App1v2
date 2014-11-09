@@ -49,10 +49,10 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.ProgramSemester#updateStudents(java.util.List)
+	 * @see com.group3.interfaces.ProgramSemester#setStudents(java.util.List)
 	 */
 	@Override
-	public void updateStudents(List<Student> students) {
+	public void setStudents(List<Student> students) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -71,10 +71,10 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.ProgramSemester#updateYearNumber(int)
+	 * @see com.group3.interfaces.ProgramSemester#setYearNumber(int)
 	 */
 	@Override
-	public void updateYearNumber(int yearNumber) {
+	public void setYearNumber(int yearNumber) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -82,10 +82,10 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.ProgramSemester#updateSemesters(java.util.List)
+	 * @see com.group3.interfaces.ProgramSemester#setSemesters(java.util.List)
 	 */
 	@Override
-	public boolean updateSemesters(List<Semester> semesters) {
+	public boolean setSemesters(List<Semester> semesters) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -93,10 +93,10 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.ProgramSemester#updateProgram(com.group3.interfaces.Program)
+	 * @see com.group3.interfaces.ProgramSemester#setProgram(com.group3.interfaces.Program)
 	 */
 	@Override
-	public void updateProgram(Program program) {
+	public void setProgram(Program program) {
 		// TODO Auto-generated method stub
 		
 	}

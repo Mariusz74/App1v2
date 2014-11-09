@@ -4,6 +4,9 @@
  */
 package com.group3.domain;
 
+import java.util.List;
+
+import com.group3.interfaces.Deferral;
 import com.group3.interfaces.Module;
 import com.group3.interfaces.ProgramSemester;
 import com.group3.interfaces.Student;
@@ -18,20 +21,16 @@ public class StudentImpl implements Student {
 	String ID;
 	Module Elective;
 	ProgramSemester classgroup;
-	
+	List<Deferral> deferrals;
 	
 	
 	/* (non-Javadoc)
 	 * @see com.group3.interfaces.Student#addDeferral(int)
 	 */
 	@Override
-	public void addDeferral(int ID) {
-		// TODO Auto-generated method stub
-		
+	public void addDeferral(Deferral deferral) {
+		this.deferrals.add(deferral);
 	}
-	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Student#deleteDeferral(int)
-	 */
 	@Override
 	public void deleteDeferral(int ID) {
 		// TODO Auto-generated method stub
@@ -46,10 +45,10 @@ public class StudentImpl implements Student {
 		return null;
 	}
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Student#updateName(java.lang.String)
+	 * @see com.group3.interfaces.Student#setName(java.lang.String)
 	 */
 	@Override
-	public void updateName(String name) {
+	public void setName(String name) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -62,10 +61,10 @@ public class StudentImpl implements Student {
 		return null;
 	}
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Student#updateID(java.lang.String)
+	 * @see com.group3.interfaces.Student#setID(java.lang.String)
 	 */
 	@Override
-	public void updateID(String iD) {
+	public void setID(String iD) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -78,10 +77,10 @@ public class StudentImpl implements Student {
 		return null;
 	}
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Student#updateElective(com.group3.interfaces.Module)
+	 * @see com.group3.interfaces.Student#setElective(com.group3.interfaces.Module)
 	 */
 	@Override
-	public void updateElective(Module elective) {
+	public void setElective(Module elective) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -110,10 +109,10 @@ public class StudentImpl implements Student {
 		return null;
 	}
 	/* (non-Javadoc)
-	 * @see com.group3.interfaces.Student#updateProgramSemester(com.group3.interfaces.ProgramSemester)
+	 * @see com.group3.interfaces.Student#setProgramSemester(com.group3.interfaces.ProgramSemester)
 	 */
 	@Override
-	public void updateProgramSemester(ProgramSemester programSemester) {
+	public void setProgramSemester(ProgramSemester programSemester) {
 		// TODO Auto-generated method stub
 		
 	}

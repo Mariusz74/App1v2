@@ -17,13 +17,13 @@ public class ModuleImpl implements Module {
 	public String getModuleName() {
 		return ModuleName;
 	}
-	public void updateModuleName(String moduleName) {
+	public void setModuleName(String moduleName) {
 		ModuleName = moduleName;
 	}
 	public String getModuleID() {
 		return ModuleID;
 	}
-	public void updateModuleID(String moduleID) {
+	public void setModuleID(String moduleID) {
 		ModuleID = moduleID;
 	}
 	

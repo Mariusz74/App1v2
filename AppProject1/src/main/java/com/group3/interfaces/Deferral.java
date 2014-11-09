@@ -1,20 +1,25 @@
 /*Author:Mikhail*/
 package com.group3.interfaces;
 
+import java.util.List;
+
 import com.group3.domain.SearchModel;
 
 
 
 public interface Deferral {
 
-	/*
-	 * Set itself as assigned to a lecturer
-	 * */
-	public DeferralHandler getAssignedDeferralHandler();
-	public int setToAssigned(DeferralHandler lecturer);
+	public String getImageAddress() ;
+	public void setImageAddress(String imageAddress);
+	public DeferralHandler getLecturer() ;
+	public void setLecturer(DeferralHandler lecturer);
+	public Student getStudent() ;
+	public void setStudent(Student student) ;
+	public List<Module> getModule();
+	public void setModule(List<Module> module) ;
 	public boolean isProccesed();
-	public boolean isProccesed(boolean state);
-	
+	public void setProccesed(boolean isProccesed) ;
 	public int getID();
 	public void setID(int iD);
+
 }

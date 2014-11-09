@@ -15,14 +15,14 @@ import org.springframework.beans.factory.annotation.Required;
 public interface ProgramSemester {
 
 	public List<Student> getStudents();
-	public void updateStudents(List<Student> students);
+	public void setStudents(List<Student> students);
 	public void deleteStudent(int ID);
 	
 	public int getYearNumber();
-	public void updateYearNumber(int yearNumber);
+	public void setYearNumber(int yearNumber);
 	
 	@Required
-	public boolean updateSemesters(List<Semester> semesters);
+	public boolean setSemesters(List<Semester> semesters);
 	public void addSemester(Semester semester);
 	public void deleteSemester(int id);
 	public List<Semester>  getSemesters();
@@ -30,7 +30,7 @@ public interface ProgramSemester {
 	
 	public Program getProgram();
 	@Required
-	public void updateProgram(Program program);
+	public void setProgram(Program program);
 	public void deleteProgram(int ID);
 	
 	public String getClassgroupName();
