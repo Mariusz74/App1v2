@@ -4,6 +4,7 @@
  */
 package com.group3.DAOImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.group3.interfaces.Module;
@@ -20,6 +21,7 @@ public class ModuleDAOImpl implements ModuleDAO {
 	public ModuleDAOImpl(List<Module> Module)
 	{
 		this.Modules=Module;
+		this.Modules=new ArrayList<Module>();
 	}
 	
 	
