@@ -1,5 +1,10 @@
 package com.group3;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.group3.domain.ProgramImpl;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -10,6 +15,7 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+	private  ApplicationContext context;
     /**
      * Create the test case
      *
@@ -33,6 +39,10 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+    	//CreateProgram();
     }
+    
+
+	
+
 }

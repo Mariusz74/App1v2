@@ -12,19 +12,19 @@ import com.group3.interfaces.Module;
  */
 public class ModuleImpl implements Module {
 
-	String ModuleName;
-	String ModuleID;
-	public String getModuleName() {
-		return ModuleName;
+	String name;
+	String ID;
+	public String getName() {
+		return name;
 	}
-	public void setModuleName(String moduleName) {
-		ModuleName = moduleName;
+	public void setName(String moduleName) {
+		name = moduleName;
 	}
-	public String getModuleID() {
-		return ModuleID;
+	public String getID() {
+		return ID;
 	}
-	public void setModuleID(String moduleID) {
-		ModuleID = moduleID;
+	public void setID(String moduleID) {
+		ID = moduleID;
 	}
 	
 
