@@ -26,32 +26,37 @@ public class StudentDAOImpl implements StudentDAO {
 	
 	
 	@Override
-	public void create(Student student) {
-		this.deferrals.add(student);
+	public boolean create(Student student) {
+		return this.deferrals.add(student);
 	}
 
 	@Override
-	public void delete(String ID) {
+	public boolean delete(String ID) {
 		for(Student def:deferrals)
 		{
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
 				this.deferrals.remove(ID);
+				return true;
 			}
 		}
+		
+		return false;
 	}
 
 	@Override
-	public void update(Student student) {
+	public boolean update(Student student) {
 		int index=0;
 		for(Student def:deferrals)
 		{
 			if(def.getID()==student.getID())
 			{
 				this.deferrals.set(index, student);
+				return true;
 			}
 			index++;
 		}
+		return false;
 	}
 
 	@Override
@@ -63,6 +68,7 @@ public class StudentDAOImpl implements StudentDAO {
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
 				student= def;
+				
 			}
 		}
 		

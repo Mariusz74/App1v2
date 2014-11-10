@@ -14,9 +14,9 @@ import com.group3.interfaces.Program;
  *
  */
 public interface ProgramDAO {
-	public void create(Program program);
-	public void delete(int ID);
-	public void update(Program program);
+	public boolean create(Program program);
+	public boolean delete(int ID);
+	public boolean update(Program program);
 	public Program find(int ID);
 	public List<Program> getAll();
 	

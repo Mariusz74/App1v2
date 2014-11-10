@@ -18,8 +18,8 @@ import com.group3.interfaces.DAOStub.ProgramDAO;
  *TODO add database context
  */
 public class ProgramImpl implements Program{
-	private ProgramDAO programDAO;
-	List<ProgramSemester> classGroups;
+	//private ProgramDAO programDAO;
+	List<ProgramSemester> programSemesters;
 	String name;
 	int ID;
 	
@@ -29,66 +29,30 @@ public class ProgramImpl implements Program{
 		this.name=name;
 	}
 
-	@Override
-	public List<ProgramSemester> getProgramSemesters() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addProgramSemesters(List<ProgramSemester> classGroup) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteProgramSemester(int ID) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setProgramSemester(ProgramSemester programSem) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public ProgramSemester getProgramSemester(int ID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteName(String name) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setID(int ID) {
-		// TODO Auto-generated method stub
-		
-	}
 	
+	public List<ProgramSemester> getProgramSemesters() {
+		return programSemesters;
+	}
+
+	public void setProgramSemesters(List<ProgramSemester> programSemesters) {
+		this.programSemesters = programSemesters;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
 
 	
 }

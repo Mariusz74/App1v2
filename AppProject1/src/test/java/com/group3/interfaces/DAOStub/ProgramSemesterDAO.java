@@ -15,9 +15,9 @@ import com.group3.interfaces.ProgramSemester;
  *
  */
 public interface ProgramSemesterDAO {
-	public void create(ProgramSemester programSemester);
-	public void delete(int ID);
-	public void update(ProgramSemester programSemester);
+	public boolean create(ProgramSemester programSemester);
+	public boolean delete(int ID);
+	public boolean update(ProgramSemester programSemester);
 	public ProgramSemester find(int ID);
 	public List<ProgramSemester> getAll();
 }

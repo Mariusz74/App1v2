@@ -24,32 +24,36 @@ public class LecturerDAOImpl implements LecturerDAO {
 	
 	
 	@Override
-	public void create(Lecturer Lecturer) {
-		this.Lecturers.add(Lecturer);
+	public boolean create(Lecturer Lecturer) {
+		return this.Lecturers.add(Lecturer);
 	}
 
 	@Override
-	public void delete(String ID) {
+	public boolean delete(String ID) {
 		for(Lecturer def:Lecturers)
 		{
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
 				this.Lecturers.remove(ID);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	@Override
-	public void update(Lecturer Lecturer) {
+	public boolean update(Lecturer Lecturer) {
 		int index=0;
 		for(Lecturer def:Lecturers)
 		{
 			if(def.getID()==Lecturer.getID())
 			{
 				this.Lecturers.set(index, Lecturer);
+				return true;
 			}
 			index++;
 		}
+		return false;
 	}
 
 	@Override

@@ -21,38 +21,42 @@ public class ModuleDAOImpl implements ModuleDAO {
 	public ModuleDAOImpl(List<Module> Module)
 	{
 		this.Modules=Module;
-		this.Modules=new ArrayList<Module>();
+		
 	}
 	
 	
 	
 	@Override
-	public void create(Module Module) {
-		this.Modules.add(Module);
+	public boolean create(Module Module) {
+		return this.Modules.add(Module);
 	}
 
 	@Override
-	public void delete(String ID) {
+	public boolean delete(String ID) {
 		for(Module def:Modules)
 		{
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
 				this.Modules.remove(ID);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	@Override
-	public void update(Module Module) {
+	public boolean update(Module Module) {
 		int index=0;
 		for(Module def:Modules)
 		{
 			if(def.getID()==Module.getID())
 			{
 				this.Modules.set(index, Module);
+				return true;
 			}
 			index++;
 		}
+		return false;
 	}
 
 	@Override

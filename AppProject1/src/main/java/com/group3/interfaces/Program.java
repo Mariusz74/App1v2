@@ -12,17 +12,18 @@ import java.util.List;
  */
 public interface Program {
 	
-	public List<ProgramSemester> getProgramSemesters();
-	public void addProgramSemesters(List<ProgramSemester> classGroup) ;
-	public void deleteProgramSemester(int ID);
-	public void setProgramSemester(ProgramSemester programSem);
-	public ProgramSemester getProgramSemester(int ID);
-	
-	
-	public String getName() ;
-	public void setName(String name);
-	public void deleteName(String name);
 
+	public List<ProgramSemester> getProgramSemesters();
+
+	public void setProgramSemesters(List<ProgramSemester> programSemester);
+
+	public String getName();
+
+	public void setName(String name);
 	public int getID() ;
-	public void setID(int ID);
+
+	public void setID(int iD);
+	
+	
+	
 }

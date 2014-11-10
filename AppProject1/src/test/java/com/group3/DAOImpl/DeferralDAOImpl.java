@@ -24,32 +24,36 @@ public class DeferralDAOImpl implements DeferralDAO {
 	
 	
 	@Override
-	public void create(Deferral deferral) {
-		this.deferrals.add(deferral);
+	public boolean create(Deferral deferral) {
+		return this.deferrals.add(deferral);
 	}
 
 	@Override
-	public void delete(int ID) {
+	public boolean delete(int ID) {
 		for(Deferral def:deferrals)
 		{
 			if(def.getID()==ID)
 			{
 				this.deferrals.remove(ID);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	@Override
-	public void update(Deferral deferral) {
+	public boolean update(Deferral deferral) {
 		int index=0;
 		for(Deferral def:deferrals)
 		{
 			if(def.getID()==deferral.getID())
 			{
 				this.deferrals.set(index, deferral);
+				return true;
 			}
 			index++;
 		}
+		return false;
 	}
 
 	@Override

@@ -15,9 +15,9 @@ import com.group3.interfaces.Semester;
  *
  */
 public interface SemesterDAO {
-	public void create(Semester semester);
-	public void delete(int ID);
-	public void update(Semester semester);
+	public boolean create(Semester semester);
+	public boolean delete(int ID);
+	public boolean update(Semester semester);
 	public Semester find(int ID);
 	public List<Semester> getAll();
 }

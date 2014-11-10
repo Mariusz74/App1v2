@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- @Author:Mikhail -->
+                 
+                                        
+<!-- Program -->
+<bean id="programDCOM" class="com.group3.domain.ProgramImpl">
+		<property name="ID" value="1"></property>
+			<property name="programSemesters" ref="classGroupDCOM"></property>
+		<constructor-arg name="name" value="SoftDev"></constructor-arg>
+</bean>
+<bean id="programDNET" class="com.group3.domain.ProgramImpl">
+		<property name="ID" value="2"></property>
+		<property name="programSemesters" ref="classGroupDNET"></property>
+		<constructor-arg name="name" value="DNET"></constructor-arg>
+</bean>
+
+
+<!-- Lists -->
+<bean id="programs" class="java.util.ArrayList">
+	    <constructor-arg>
+	            <list>        
+	            <ref bean="programDNET" />                       
+	        </list>
+	    </constructor-arg>
+</bean>
+<bean id="semesters" class="java.util.ArrayList">
+	    <constructor-arg>
+	            <list>
+	            <ref bean="Semester1" />             
+	        </list>
+	    </constructor-arg>
+</bean>
+<bean id="programSemesters" class="java.util.ArrayList">
+	    <constructor-arg>
+	            <list> 
+	             <ref bean="classGroupDNET" />               
+	        </list>
+	    </constructor-arg>
+</bean>
+
+<!--PrgramSemester-->
+<bean id="classGroupDCOM" class="com.group3.domain.ProgramSemesterImpl">
+		<constructor-arg name="SemesterList" ref="semesters"></constructor-arg>
+		<constructor-arg name="classgroupName" value="Dcom1"></constructor-arg>
+		<constructor-arg name="yearNumber" value="1"></constructor-arg>
+		<constructor-arg name="program" ref="programDCOM"></constructor-arg>
+		<property name="ID" value="1"></property>
+</bean>
+<bean id="classGroupDNET" class="com.group3.domain.ProgramSemesterImpl">
+		<property name="ID" value="1"></property>
+		<constructor-arg name="SemesterList" ref="semesters"></constructor-arg>
+		<constructor-arg name="classgroupName" value="Dnet1"></constructor-arg>
+		<constructor-arg name="yearNumber" value="1"></constructor-arg>
+		<constructor-arg name="program" ref="programDNET"></constructor-arg>
+</bean>
+
+
+<!--semesters-->
+
+
+<bean id="Semester1" class="com.group3.domain.SemesterImpl">
+		<constructor-arg name="name" value="sem1"></constructor-arg>
+		<constructor-arg name="semesterNumber" value="1"></constructor-arg>
+		<property name="ID" value="1"></property>
+</bean>
+<bean id="semester2" class="com.group3.domain.SemesterImpl">
+		<constructor-arg name="name" value="sem2"></constructor-arg>
+		<constructor-arg name="semesterNumber" value="2"></constructor-arg>
+		<property name="ID" value="2"></property>
+</bean>
+
+
+<!--DAO-->
+
+<bean id="programDAO" class="com.group3.DAOImpl.ProgramDAOImpl">
+		<constructor-arg name="programs" ref="programs"></constructor-arg>
+</bean>
+
+<bean id="programSemesterDAO" class="com.group3.DAOImpl.ProgramSemesterDAOImpl">
+		<constructor-arg name="programSemesters" ref="programSemesters"></constructor-arg>
+</bean>
+
+
+<bean id="semesterDAO" class="com.group3.DAOImpl.SemesterDAOImpl">
+		<constructor-arg name="semesters" ref="semesters"></constructor-arg>
+</bean>
+
+
+</beans>
+

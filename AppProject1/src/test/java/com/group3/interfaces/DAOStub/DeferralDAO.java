@@ -14,9 +14,9 @@ import com.group3.interfaces.Deferral;
  */
 public interface DeferralDAO {
 
-	public void create(Deferral deferral);
-	public void delete(int ID);
-	public void update(Deferral deferral);
+	public boolean create(Deferral deferral);
+	public boolean delete(int ID);
+	public boolean update(Deferral deferral);
 	public Deferral find(int ID);
 	public List<Deferral> getAll(Deferral deferral);
 	

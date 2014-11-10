@@ -16,48 +16,52 @@ import com.group3.interfaces.DAOStub.SemesterDAO;
  */
 public class SemesterDAOImpl implements SemesterDAO {
 
-		List<Semester> Semesters; 
-	public SemesterDAOImpl(List<Semester> Semester)
+		List<Semester> semesters; 
+	public SemesterDAOImpl(List<Semester> semesters)
 	{
-		this.Semesters=Semester;
+		this.semesters=semesters;
 	}
 	
 	
 	
 	@Override
-	public void create(Semester Semester) {
-		this.Semesters.add(Semester);
+	public boolean create(Semester Semester) {
+		return this.semesters.add(Semester);
 	}
 
 	@Override
-	public void delete(int ID) {
-		for(Semester def:Semesters)
+	public boolean delete(int ID) {
+		for(Semester def:semesters)
 		{
 			if(def.getID()==ID)
 			{
-				this.Semesters.remove(ID);
+				this.semesters.remove(ID);
+				return true;
 			}
 		}
+		return false;
 	}
 
 	@Override
-	public void update(Semester Semester) {
+	public boolean update(Semester Semester) {
 		int index=0;
-		for(Semester def:Semesters)
+		for(Semester def:semesters)
 		{
 			if(def.getID()==Semester.getID())
 			{
-				this.Semesters.set(index, Semester);
+				this.semesters.set(index, Semester);
+				return true;
 			}
 			index++;
 		}
+		return false;
 	}
 
 	@Override
 	public Semester find(int ID) {
 		Semester Semester=null;
 		
-		for(Semester def:Semesters)
+		for(Semester def:semesters)
 		{
 			if(def.getID()==ID)
 			{
@@ -70,6 +74,6 @@ public class SemesterDAOImpl implements SemesterDAO {
 
 	@Override
 	public List<Semester> getAll() {
-		return this.Semesters;
+		return this.semesters;
 	}
 }

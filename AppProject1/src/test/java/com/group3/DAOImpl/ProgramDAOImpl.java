@@ -16,60 +16,71 @@ import com.group3.interfaces.DAOStub.ProgramDAO;
  */
 public class ProgramDAOImpl implements ProgramDAO {
 
-		List<Program> deferrals; 
-	public ProgramDAOImpl(List<Program> deferral)
+		List<Program> programs; 
+	public ProgramDAOImpl(List<Program> programs)
 	{
-		this.deferrals=deferral;
+		this.programs=programs;
 	}
 	
 	
 	
-	@Override
-	public void create(Program deferral) {
-		this.deferrals.add(deferral);
+	//@Override
+	public boolean create(Program programs) {
+		
+		return this.programs.add(programs);
+		
 	}
 
 	@Override
-	public void delete(int ID) {
-		for(Program def:deferrals)
+	public boolean delete(int ID) {
+		
+		boolean isSuccess=false;
+		for(Program def:programs)
 		{
 			if(def.getID()==ID)
 			{
-				this.deferrals.remove(ID);
+				this.programs.remove(def);
+				
+				isSuccess=true;
+				break;
 			}
 		}
+		return isSuccess;
 	}
 
 	@Override
-	public void update(Program deferral) {
+	public boolean update(Program programs) {
 		int index=0;
-		for(Program def:deferrals)
+		boolean isSuccess=false;
+		for(Program def:this.programs)
 		{
-			if(def.getID()==deferral.getID())
+			if(def.getID()==programs.getID())
 			{
-				this.deferrals.set(index, deferral);
+				this.programs.set(index, programs);
+				isSuccess=true;
 			}
 			index++;
 		}
+		return isSuccess;
 	}
 
 	@Override
 	public Program find(int ID) {
-		Program deferral=null;
+		Program programs=null;
 		
-		for(Program def:deferrals)
+		for(Program def:this.programs)
 		{
 			if(def.getID()==ID)
 			{
-				deferral= def;
+				programs= def;
 			}
 		}
 		
-		return deferral;
+		return programs;
 	}
 
 	@Override
 	public List<Program> getAll() {
-		return this.deferrals;
+		return this.programs;
 	}
 }

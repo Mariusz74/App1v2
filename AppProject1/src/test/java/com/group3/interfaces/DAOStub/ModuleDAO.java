@@ -14,9 +14,9 @@ import com.group3.interfaces.Module;
  *
  */
 public interface ModuleDAO {
-	public void create(Module module);
-	public void delete(String ID);
-	public void update(Module module);
+	public boolean create(Module module);
+	public boolean delete(String ID);
+	public boolean update(Module module);
 	public Module find(String ID);
 	public List<Module> getAll(Module module);
 }

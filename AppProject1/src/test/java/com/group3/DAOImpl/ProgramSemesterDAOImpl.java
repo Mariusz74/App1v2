@@ -16,49 +16,56 @@ import com.group3.interfaces.DAOStub.ProgramSemesterDAO;
  */
 public class ProgramSemesterDAOImpl implements ProgramSemesterDAO {
 
-		List<ProgramSemester> deferrals; 
+		List<ProgramSemester> programSemesters; 
 		
-	public ProgramSemesterDAOImpl(List<ProgramSemester> programSemester)
+	public ProgramSemesterDAOImpl(List<ProgramSemester> programSemesters)
 	{
-		this.deferrals=programSemester;
+		this.programSemesters=programSemesters;
 	}
 	
 	
 	
 	@Override
-	public void create(ProgramSemester programSemester) {
-		this.deferrals.add(programSemester);
+	public boolean create(ProgramSemester programSemester) {
+		return this.programSemesters.add(programSemester);
 	}
 
 	@Override
-	public void delete(int ID) {
-		for(ProgramSemester def:deferrals)
+	public boolean delete(int ID) {
+		boolean isSuccess=false;
+		for(ProgramSemester def:programSemesters)
 		{
 			if(def.getID()==ID)
 			{
-				this.deferrals.remove(ID);
+				this.programSemesters.remove(ID);
+				isSuccess=true;
 			}
 		}
+		return isSuccess;
 	}
+	
 
 	@Override
-	public void update(ProgramSemester programSemester) {
+	public boolean update(ProgramSemester programSemester) {
 		int index=0;
-		for(ProgramSemester def:deferrals)
+		boolean isSuccess=false;
+		for(ProgramSemester def:programSemesters)
 		{
 			if(def.getID()==programSemester.getID())
 			{
-				this.deferrals.set(index, programSemester);
+				this.programSemesters.set(index, programSemester);
+				 isSuccess=true;
 			}
 			index++;
 		}
+		return isSuccess;
 	}
 
 	@Override
 	public ProgramSemester find(int ID) {
 		ProgramSemester programSemester=null;
 		
-		for(ProgramSemester def:deferrals)
+		for(ProgramSemester def:programSemesters)
 		{
 			if(def.getID()==ID)
 			{
@@ -71,7 +78,7 @@ public class ProgramSemesterDAOImpl implements ProgramSemesterDAO {
 
 	@Override
 	public List<ProgramSemester> getAll() {
-		return this.deferrals;
+		return this.programSemesters;
 	}
 
 }

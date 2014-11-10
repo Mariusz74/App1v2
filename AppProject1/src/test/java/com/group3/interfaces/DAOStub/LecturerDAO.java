@@ -14,9 +14,9 @@ import com.group3.interfaces.Deferral;
  *
  */
 public interface LecturerDAO {
-	public void create(Lecturer lecturer);
-	public void delete(String ID);
-	public void update(Lecturer lecturer);
+	public boolean create(Lecturer lecturer);
+	public boolean delete(String ID);
+	public boolean update(Lecturer lecturer);
 	public Lecturer find(String ID);
 	public List<Lecturer> getAll(Lecturer lecturer);
 	
