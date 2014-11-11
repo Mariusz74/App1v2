@@ -13,70 +13,63 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.group3.domain.SemesterImpl;
-import com.group3.domain.ProgramSemesterImpl;
-import com.group3.domain.SemesterImpl;
-import com.group3.interfaces.Semester;
-import com.group3.interfaces.ProgramSemester;
-import com.group3.interfaces.DAOStub.ProgramDAO;
-import com.group3.interfaces.DAOStub.ProgramSemesterDAO;
-import com.group3.interfaces.DAOStub.SemesterDAO;
+import com.group3.domain.StudentImpl;
+import com.group3.interfaces.Student;
+import com.group3.interfaces.DAOStub.StudentDAO;
 
 /**
  * @author Mikhail
  *
  */
-public class SemesterCrudTest {
+public class StudentCRUDTest {
 	private   ApplicationContext context;
-	private   SemesterDAO semesterDAO;
+	private   StudentDAO studentDAO;
 	
 	@Before
 	public  void ProgramCrudTestInit()
 	{		
 		context=new ClassPathXmlApplicationContext("crudTestConfig.xml"); 
 		//In-Memory DAO
-		semesterDAO= (SemesterDAO)context.getBean("semesterDAO");
+		studentDAO= (StudentDAO)context.getBean("studentDAO");
 	}
 	@Test
 	//assert true if added to mock DB successfully
 	public void create() {
-		SemesterImpl semester=(SemesterImpl)context.getBean("semester2"); 
-		assertTrue("new object added to mock db by dao",semesterDAO.create(semester));
+		StudentImpl student=(StudentImpl)context.getBean("semester2"); 
+		assertTrue("new object added to mock db by dao",studentDAO.create(student));
 	}
 	@Test
 	//assert true if object to be updated is found in repo and has been updated successfully.
 	public void update() { 
-		Semester semester=(Semester)context.getBean("semester2"); 
-		assertTrue(semesterDAO.update(semester));
+		Student student=(Student)context.getBean("semester2"); 
+		assertTrue(studentDAO.update(student));
 	}
 	@Test
 	//assert false if object to be delete is not found in repo
 	public void updateDeleted() { 
 		
 		
-		Semester semester=(Semester)context.getBean("semester2"); 
+		Student student=(Student)context.getBean("semester2"); 
 		this.delete();
 		//assert true if created successfully
-		assertFalse(semesterDAO.update(semester));
+		assertFalse(studentDAO.update(student));
 	}
 	@Test
 	//assert true if object to be delete is found in repo and has been deleted successfully.
 	public void delete() {
-		Semester programToDelete=(Semester)context.getBean("semester2"); 
-		assertTrue(semesterDAO.delete(programToDelete.getID()));
+		Student programToDelete=(Student)context.getBean("semester2"); 
+		assertTrue(studentDAO.delete(programToDelete.getID()));
 	}
 	@Test
 	//assert true if object to be found is found in repo and fetched successfully.
 	public void find() {
-		Semester found;
-		Semester toFind;
+		Student found;
+		Student toFind;
 	
-		toFind=(Semester)context.getBean("semester2");
-		found = semesterDAO.find(toFind.getID());
+		toFind=(Student)context.getBean("semester2");
+		found = studentDAO.find(toFind.getID());
 		
 		assertEquals(toFind.getID(), found.getID());
 	}
 	
-
-
 }

@@ -78,14 +78,14 @@
 <bean id="programDAO" class="com.group3.DAOImpl.ProgramDAOImpl">
 		<constructor-arg name="programs" ref="programs"></constructor-arg>
 </bean>
-
 <bean id="programSemesterDAO" class="com.group3.DAOImpl.ProgramSemesterDAOImpl">
 		<constructor-arg name="programSemesters" ref="programSemesters"></constructor-arg>
 </bean>
-
-
 <bean id="semesterDAO" class="com.group3.DAOImpl.SemesterDAOImpl">
 		<constructor-arg name="semesters" ref="semesters"></constructor-arg>
+</bean>
+<bean id="studentDAO" class="com.group3.DAOImpl.StudentDAOImpl">
+		<!-- <constructor-arg name="students" ref="students"></constructor-arg> -->
 </bean>
 
 

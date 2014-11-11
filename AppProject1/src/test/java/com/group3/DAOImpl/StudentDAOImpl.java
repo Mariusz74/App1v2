@@ -17,26 +17,26 @@ import com.group3.interfaces.DAOStub.StudentDAO;
  */
 public class StudentDAOImpl implements StudentDAO {
 
-		List<Student> deferrals; 
-	public StudentDAOImpl(List<Student> student)
+		List<Student> students; 
+	public StudentDAOImpl(List<Student> students)
 	{
-		this.deferrals=student;
+		this.students=students;
 	}
 	
 	
 	
 	@Override
 	public boolean create(Student student) {
-		return this.deferrals.add(student);
+		return this.students.add(student);
 	}
 
 	@Override
 	public boolean delete(String ID) {
-		for(Student def:deferrals)
+		for(Student def:students)
 		{
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
-				this.deferrals.remove(ID);
+				this.students.remove(ID);
 				return true;
 			}
 		}
@@ -47,11 +47,11 @@ public class StudentDAOImpl implements StudentDAO {
 	@Override
 	public boolean update(Student student) {
 		int index=0;
-		for(Student def:deferrals)
+		for(Student def:students)
 		{
 			if(def.getID()==student.getID())
 			{
-				this.deferrals.set(index, student);
+				this.students.set(index, student);
 				return true;
 			}
 			index++;
@@ -63,7 +63,7 @@ public class StudentDAOImpl implements StudentDAO {
 	public Student find(String ID) {
 		Student student=null;
 		
-		for(Student def:deferrals)
+		for(Student def:students)
 		{
 			if(def.getID().equalsIgnoreCase(ID)==true)
 			{
@@ -77,6 +77,6 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public List<Student> getAll() {
-		return this.deferrals;
+		return this.students;
 	}
 }
