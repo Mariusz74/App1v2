@@ -84,9 +84,7 @@
 <bean id="semesterDAO" class="com.group3.DAOImpl.SemesterDAOImpl">
 		<constructor-arg name="semesters" ref="semesters"></constructor-arg>
 </bean>
-<bean id="studentDAO" class="com.group3.DAOImpl.StudentDAOImpl">
-		<!-- <constructor-arg name="students" ref="students"></constructor-arg> -->
-</bean>
+
 
 
 </beans>
