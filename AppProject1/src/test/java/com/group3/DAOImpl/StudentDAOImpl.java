@@ -31,10 +31,10 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 	@Override
-	public boolean delete(String ID) {
+	public boolean delete(int ID) {
 		for(Student def:students)
 		{
-			if(def.getID().equalsIgnoreCase(ID)==true)
+			if(def.getID()==(ID))
 			{
 				this.students.remove(ID);
 				return true;
@@ -60,12 +60,12 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 	@Override
-	public Student find(String ID) {
+	public Student find(int ID) {
 		Student student=null;
 		
 		for(Student def:students)
 		{
-			if(def.getID().equalsIgnoreCase(ID)==true)
+			if(def.getID() == (ID))
 			{
 				student= def;
 				

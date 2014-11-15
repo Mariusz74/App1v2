@@ -16,8 +16,8 @@ import com.group3.interfaces.Student;
  */
 public interface StudentDAO {
 	public boolean create(Student student);
-	public boolean delete(String ID);
+	public boolean delete(int i);
 	public boolean update(Student student);
-	public Student find(String ID);
+	public Student find(int i);
 	public List<Student> getAll();
 }

@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- Initialization for data source -->
-	<bean id="dataSource" 
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/cloudcit"/>
-		<property name="username" value="test1"/>
-		<property name="password" value="test1"/>
-	</bean>
-	
-	<bean id="studentJdbcTemplate" 
-		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
-		autowire="byType">
-	</bean>                                        
+                                        
 
 <bean id="Program" class="com.group3.domain.ProgramImpl">
 		
