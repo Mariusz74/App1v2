@@ -36,7 +36,7 @@ public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 
 	@Override
 	public void updateProgramSemester(int id, String name, int CompulsoryModuleQuantity) {
-		String SQL = "update ProgramSemester set name = ?, set CompulsoryModuleQuantity = ? where id = ?";
+		String SQL = "update ProgramSemester set name = ?, CompulsoryModuleQuantity = ? where id = ?";
 		jdbcTemplateObject.update(SQL,  new Object[] {name, CompulsoryModuleQuantity, id});
 		System.out.println("Updated ProgramSemester with ID = " + id + " name = " + name + " quantity = " + CompulsoryModuleQuantity);
 		return;	
@@ -44,7 +44,7 @@ public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 	
 	@Override
 	public void updateProgramSemester2(int id, int idProgram, int idSemester) {
-		String SQL = "update ProgramSemester set idProgram = ?, set idSemester = ?, where id = ?";
+		String SQL = "update ProgramSemester set idProgram = ?, idSemester = ? where id = ?";
 		jdbcTemplateObject.update(SQL,  new Object[] {idProgram, idSemester, id});
 		System.out.println("Updated ProgramSemester with ID = " + id + " name = " + idProgram + " quantity = " + idSemester );
 		return;	
