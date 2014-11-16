@@ -44,6 +44,14 @@
 		<property name="address" value="me"></property>
 	</bean>
 	
+	<bean id="lecturerTest2" 
+		class="com.group3.domain.LecturerImpl">
+		<property name="firstName" value="mary"></property>
+		<property name="surName" value="me"></property>
+		<property name="email" value="mary.me@somethingcheesy"></property>
+		<property name="address" value="me"></property>
+	</bean>
+	
 </beans>
 
 <!-- 
