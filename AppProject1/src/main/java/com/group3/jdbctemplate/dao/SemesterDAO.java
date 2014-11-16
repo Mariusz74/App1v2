@@ -8,13 +8,13 @@ public interface SemesterDAO {
 	public void setDataSource(DataSource ds);
 	
 	// This is the method to be used to create a record in the Student table.
-	public void createSemester(String name);
+	public int createSemester(String name);
 	
 	// This is the method to be used to delete a record from the Student table corresponding
 	// to a passed Student id.
-	public void deleteSemester(Integer id);	
+	public int deleteSemester(Integer id);	
 	
 	// This is the method to be used to update a record into the Student table.
-	public void updateSemester(Integer id, String name);
+	public int updateSemester(Integer id, String name);
 		
 }

@@ -6,6 +6,8 @@ package com.group3.jdbctemplate.dao;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import com.group3.domain.Lecturer;
 import com.group3.interfaces.Deferral;
 
@@ -14,6 +16,7 @@ import com.group3.interfaces.Deferral;
  *
  */
 public interface LecturerDAO {
+	public void setDataSource(DataSource ds);
 	public int create(Lecturer lecturer);
 	public int delete(int ID);
 	public int update(Lecturer lecturer);

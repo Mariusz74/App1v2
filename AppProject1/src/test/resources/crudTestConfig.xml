@@ -5,7 +5,7 @@
 <!-- @Author:Mikhail -->
                  
  
-<bean id="dataSource" 
+	<bean id="dataSource" 
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/cloudcit"/>
@@ -13,20 +13,25 @@
 		<property name="password" value="test1"/>
 	</bean>
 	
-	<bean id="studentJdbcTemplate" 
-		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
-		autowire="byType">
-	</bean>          	
+	          	
 	
 	<bean id="programJdbcTemplate" 
-		class="com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate" 
-		autowire="byType">
+		class="com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate"  autowire="byType">
 	</bean>
 	
 	<bean id="lecturerJdbcTemplate" 
-		class="com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate" 
-		autowire="byType">
+		class="com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate" autowire="byType">
 	</bean>
+	
+	<bean id="semesterJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" autowire="byType">
+	</bean>
+	
+	<bean id="semesterTest" class="com.group3.domain.SemesterImpl">
+		<property name="name" value="testSem"></property>
+	</bean>
+	
+	
 	
 	<bean id="lecturerTest" 
 		class="com.group3.domain.Lecturer">

@@ -2,7 +2,6 @@
 
 package com.group3.interfaces;
 
-import com.group3.domain.SearchModel;
 
 /*This is the interface that the lecturer would implement*/
 public interface DeferralHandler {
@@ -10,7 +9,6 @@ public interface DeferralHandler {
 	public int getID();
 
 	public void setID(int iD) ;
-	Deferral searchDeferral(SearchModel searchModel);
 	
 	/*
 	 * Assign deferral object to lecturer for processing.

@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.group3.interfaces.DeferralHandler;
 import com.group3.interfaces.Deferral;
-import com.group3.interfaces.DeferralSearchStrategy;
 
 public class Lecturer implements DeferralHandler{
 	String firstName;
@@ -70,14 +69,6 @@ public class Lecturer implements DeferralHandler{
 		{
 			deferral.isProccesed();
 		}
-	}
-
-
-	@Override
-	public Deferral searchDeferral(SearchModel searchModel) {
-		DeferralSearchStrategy strat = new LecturerSearchDeferralStrategy();
-		return strat.Search(searchModel);
-		
 	}
 
 	public String getFirstName() {

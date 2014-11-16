@@ -52,17 +52,6 @@
 </bean>
 
 
-<bean id="Semesters" class="java.util.ArrayList">
-    <constructor-arg>
-        <list>
-            <ref bean="Semester1" />             
-        </list>
-    </constructor-arg>
-</bean>
-<bean id="Semester1" class="com.group3.domain.SemesterImpl">
-		<constructor-arg name="name" value="sem1"></constructor-arg>
-		<constructor-arg name="semesterNumber" value="4"></constructor-arg>
-</bean>
 
 
 </beans>

@@ -3,8 +3,6 @@ package com.group3.interfaces;
 
 import java.util.List;
 
-import com.group3.domain.SearchModel;
-
 
 
 public interface Deferral {

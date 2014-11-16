@@ -19,35 +19,35 @@ public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 	}
 
 	@Override
-	public void createProgramSemester(int idProgram, int idSemester) {
+	public int createProgramSemester(int idProgram, int idSemester) {
 		String SQL = "insert into ProgramSemester (idProgram, idSemester) values (?, ?)";
-		jdbcTemplateObject.update(SQL, new Object[] { idProgram, idSemester });
-		System.out.println("Created ProgramSemester = " + idProgram + " " + idSemester);
-		return;	
+		return jdbcTemplateObject.update(SQL, new Object[] { idProgram, idSemester });
+		//System.out.println("Created ProgramSemester = " + idProgram + " " + idSemester);
+		//return;	
 	}
 
 	@Override
-	public void deleteProgramSemester(int id) {
+	public int deleteProgramSemester(int id) {
 		String SQL = "delete from ProgramSemester where id = ?";
-		jdbcTemplateObject.update(SQL, new Object[] {id});
-		System.out.println("Deleted ProgramSemester with ID = " + id );	
-		return;
+		return jdbcTemplateObject.update(SQL, new Object[] {id});
+		//System.out.println("Deleted ProgramSemester with ID = " + id );	
+		//return;
 	}
 
 	@Override
-	public void updateProgramSemester(int id, String name, int CompulsoryModuleQuantity) {
+	public int updateProgramSemester(int id, String name, int CompulsoryModuleQuantity) {
 		String SQL = "update ProgramSemester set name = ?, CompulsoryModuleQuantity = ? where id = ?";
-		jdbcTemplateObject.update(SQL,  new Object[] {name, CompulsoryModuleQuantity, id});
-		System.out.println("Updated ProgramSemester with ID = " + id + " name = " + name + " quantity = " + CompulsoryModuleQuantity);
-		return;	
+		return jdbcTemplateObject.update(SQL,  new Object[] {name, CompulsoryModuleQuantity, id});
+		//System.out.println("Updated ProgramSemester with ID = " + id + " name = " + name + " quantity = " + CompulsoryModuleQuantity);
+			
 	}
 	
 	@Override
-	public void updateProgramSemester2(int id, int idProgram, int idSemester) {
+	public int updateProgramSemester2(int id, int idProgram, int idSemester) {
 		String SQL = "update ProgramSemester set idProgram = ?, idSemester = ? where id = ?";
-		jdbcTemplateObject.update(SQL,  new Object[] {idProgram, idSemester, id});
-		System.out.println("Updated ProgramSemester with ID = " + id + " name = " + idProgram + " quantity = " + idSemester );
-		return;	
+		return jdbcTemplateObject.update(SQL,  new Object[] {idProgram, idSemester, id});
+		//System.out.println("Updated ProgramSemester with ID = " + id + " name = " + idProgram + " quantity = " + idSemester );
+			
 	}
 	
 }

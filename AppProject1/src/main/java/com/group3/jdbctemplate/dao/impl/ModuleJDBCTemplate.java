@@ -17,27 +17,27 @@ public class ModuleJDBCTemplate implements ModuleDAO {
 	}
 
 	@Override
-	public void createModule(String name) {
+	public int createModule(String name) {
 		String SQL = "insert into Module (name) values (?)";
-		jdbcTemplateObject.update(SQL, new Object[] { name });
-		System.out.println("Created Module Name = " + name );
-		return;	
+		return jdbcTemplateObject.update(SQL, new Object[] { name });
+		// System.out.println("Created Module Name = " + name );
+		
 	}
 
 	@Override
-	public void deleteModule(Integer id) {
+	public int deleteModule(Integer id) {
 		String SQL = "delete from Module where id = ?";
-		jdbcTemplateObject.update(SQL, new Object[] {id});
-		System.out.println("Deleted Module with ID = " + id );	
-		return;
+		return jdbcTemplateObject.update(SQL, new Object[] {id});
+		//System.out.println("Deleted Module with ID = " + id );	
+		
 	}
 
 	@Override
-	public void updateModule(Integer id, String name) {
+	public int updateModule(Integer id, String name) {
 		String SQL = "update Module set name = ? where id = ?";
-		jdbcTemplateObject.update(SQL,  new Object[] {name, id});
-		System.out.println("Updated Module with ID = " + id );
-		return;	
+		return jdbcTemplateObject.update(SQL,  new Object[] {name, id});
+		//System.out.println("Updated Module with ID = " + id );
+			
 	}
 	
 }
