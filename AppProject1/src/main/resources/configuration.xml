@@ -26,7 +26,10 @@
 		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" 
 		autowire="byType">
 	</bean>                             
-
+<bean id="lecturerJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate" 
+		autowire="byType">
+	</bean> 
 <bean id="Program" class="com.group3.domain.ProgramImpl">
 		
 		<constructor-arg name="name" value="SoftDev"></constructor-arg>
