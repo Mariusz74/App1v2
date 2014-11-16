@@ -7,7 +7,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import com.group3.domain.Lecturer;
+
 import com.group3.domain.SemesterImpl;
 import com.group3.interfaces.Semester;
 import com.group3.jdbctemplate.dao.SemesterDAO;

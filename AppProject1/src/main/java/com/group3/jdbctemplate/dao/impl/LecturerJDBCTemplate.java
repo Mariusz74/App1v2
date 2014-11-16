@@ -14,7 +14,8 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.group3.domain.Lecturer;
+import com.group3.domain.LecturerImpl;
+import com.group3.interfaces.Lecturer;
 import com.group3.interfaces.DeferralHandler;
 import com.group3.jdbctemplate.dao.LecturerDAO;
 
@@ -90,7 +91,7 @@ public class lecturerRowMapper implements RowMapper{
 
 	@Override
 	public Object mapRow(ResultSet rs, int rowID) throws SQLException {
-		Lecturer lecturer = new Lecturer(
+		LecturerImpl lecturer = new LecturerImpl(
 				rs.getString("firstname"),rs.getString("surname")
 				);
 		lecturer.setAddress(rs.getString("address"));

@@ -7,8 +7,7 @@ package com.group3.jdbctemplate.dao;
 import java.util.List;
 
 import javax.sql.DataSource;
-
-import com.group3.domain.Lecturer;
+import com.group3.interfaces.Lecturer;
 import com.group3.interfaces.Deferral;
 
 /**

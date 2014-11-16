@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.group3.domain.DeferralImpl;
-import com.group3.domain.Lecturer;
+import com.group3.domain.LecturerImpl;
 import com.group3.domain.ProgramSemesterImpl;
 import com.group3.interfaces.DeferralHandler;
 import com.group3.interfaces.Deferral;

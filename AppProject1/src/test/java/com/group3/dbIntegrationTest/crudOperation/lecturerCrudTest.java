@@ -17,9 +17,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
-
-import com.group3.domain.Lecturer;
-import com.group3.interfaces.Semester;
+import com.group3.interfaces.Lecturer;
+import com.group3.domain.LecturerImpl;
 import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 
 /**
@@ -104,7 +103,7 @@ public class lecturerCrudTest {
 		int lastInserted=getLastInsertedID();
 		
 		//simulates a deleted record
-		Lecturer newLect=new Lecturer();
+		Lecturer newLect=new LecturerImpl();
 		newLect.setID(lastInserted+5);
 		
 		int rowsAffected=0;

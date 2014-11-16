@@ -6,6 +6,7 @@ package com.group3.dbIntegrationTest.crudOperation;
 
 import static org.junit.Assert.*;
 
+
 import java.util.List;
 
 import org.junit.Before;
@@ -15,9 +16,7 @@ import org.junit.rules.ExpectedException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.group3.domain.Lecturer;
-import com.group3.interfaces.Semester;
-import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
+
 import com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate;
 
 /**
@@ -91,23 +90,5 @@ public class ProgramCrudTest {
 	}
 
 
-	private int getLastInsertedID()
-	{
-		//helper method.
-		/*List<Semester> lects=programJdbcTemplate.getAll();
-		try{
-			if(lects.size()!=0  )
-			{
-				return lects.get(lects.size()-1).getID();
-			}
-			else
-				return 0;	
-		}
-		catch(NullPointerException ex)
-		{
-			return 0;
-		}*/
-		return 0;
-	}
-	
+
 }
