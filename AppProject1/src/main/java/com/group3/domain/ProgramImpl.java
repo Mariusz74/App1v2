@@ -12,7 +12,6 @@ import java.util.List;
 
 import com.group3.interfaces.Program;
 import com.group3.interfaces.ProgramSemester;
-import com.group3.test.interfaces.DAOStub.ProgramDAO;
 
 /**
  * @author Mikhail

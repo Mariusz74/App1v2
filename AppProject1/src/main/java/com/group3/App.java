@@ -42,8 +42,12 @@ public class App
 			ProgramJDBCTemplate programJdbcTemplate=(ProgramJDBCTemplate)context.getBean("programJdbcTemplate");
 			programJdbcTemplate.createProgram("NewProgram 2");
 			
-			SemesterJDBCTemplate semesterJdbcTemplate=(SemesterJDBCTemplate)context.getBean("semesterJdbcTemplate");
-			semesterJdbcTemplate.createSemester("Semester 1");
+			//SemesterJDBCTemplate semesterJdbcTemplate=(SemesterJDBCTemplate)context.getBean("semesterJdbcTemplate");
+			//semesterJdbcTemplate.createSemester("Semester 1");
 	
+			LecturerJDBCTemplate lecturerJdbcTemplate=(LecturerJDBCTemplate)context.getBean("lecturerJdbcTemplate");
+			
+			Lecturer lect=new Lecturer("name", "sur");
+			lecturerJdbcTemplate.create(lect);
     }
 }

@@ -16,26 +16,6 @@ public class Lecturer implements DeferralHandler{
 	String password;
 	String email;
 	String address;
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	List<DeferralImpl> deferralList;
 	
 	public Lecturer(String firstName,String surName)
 	{
@@ -46,6 +26,14 @@ public class Lecturer implements DeferralHandler{
 	}
 	
 	
+	/**
+	 * 
+	 */
+	public Lecturer() {
+		
+	}
+
+
 	public int getID() {
 		return this.ID;
 	}
@@ -147,6 +135,28 @@ public class Lecturer implements DeferralHandler{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	List<DeferralImpl> deferralList;
+	
 
 	public String toString()
 	{
