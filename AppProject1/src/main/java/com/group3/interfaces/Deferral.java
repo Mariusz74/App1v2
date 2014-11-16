@@ -19,8 +19,8 @@ public interface Deferral {
 	public void setStudent(Student student) ;
 
 	
-	public DeferralHandler getLecturer() ;
-	public void setLecturer(DeferralHandler lecturer);
+	public Lecturer getLecturer() ;
+	public void setLecturer(Lecturer lecturer);
 
 	public List<Module> getModule();
 	public void setModule(List<Module> module) ;

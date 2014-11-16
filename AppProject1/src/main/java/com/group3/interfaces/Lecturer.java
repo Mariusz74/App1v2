@@ -1,6 +1,6 @@
+//Mariusz
 package com.group3.interfaces;
 
-import com.group3.domain.DeferralImpl;
 
 public interface Lecturer {
 	

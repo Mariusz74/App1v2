@@ -1,11 +1,11 @@
-/*Author:  Mikhail Carino*/
+/*Author:  Mikhail Carino and Mariusz*/
 package com.group3.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-import com.group3.interfaces.Deferral;
+import com.group3.interfaces.;
 import com.group3.interfaces.Lecturer;
 
 public class LecturerImpl implements Lecturer {

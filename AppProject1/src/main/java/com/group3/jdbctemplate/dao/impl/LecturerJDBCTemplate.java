@@ -16,7 +16,6 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.group3.domain.LecturerImpl;
 import com.group3.interfaces.Lecturer;
-import com.group3.interfaces.DeferralHandler;
 import com.group3.jdbctemplate.dao.LecturerDAO;
 
 /**

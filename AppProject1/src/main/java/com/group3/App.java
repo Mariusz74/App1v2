@@ -7,7 +7,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.group3.domain.DeferralImpl;
 import com.group3.domain.LecturerImpl;
 import com.group3.domain.ProgramSemesterImpl;
-import com.group3.interfaces.DeferralHandler;
 import com.group3.interfaces.Deferral;
 import com.group3.jdbctemplate.dao.*;
 import com.group3.jdbctemplate.dao.impl.*;
