@@ -37,7 +37,7 @@
 	
 	
 	<bean id="lecturerTest" 
-		class="com.group3.domain.Lecturer">
+		class="com.group3.domain.LecturerImpl">
 		<property name="firstName" value="mary"></property>
 		<property name="surName" value="me"></property>
 		<property name="email" value="mary.me@somethingcheesy"></property>

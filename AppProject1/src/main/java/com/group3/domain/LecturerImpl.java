@@ -4,7 +4,7 @@ package com.group3.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.group3.interfaces.DeferralHandler;
+
 import com.group3.interfaces.Deferral;
 import com.group3.interfaces.Lecturer;
 
