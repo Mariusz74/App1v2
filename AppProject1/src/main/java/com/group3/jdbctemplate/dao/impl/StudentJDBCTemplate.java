@@ -26,7 +26,7 @@ public class StudentJDBCTemplate implements StudentDAO {
 
 	@Override
 	public void deleteStudent(Integer id) {
-		String SQL = "delete from Student where idStudent = ?";
+		String SQL = "delete from Student where id = ?";
 		jdbcTemplateObject.update(SQL, new Object[] {id});
 		System.out.println("Deleted Record with ID = " + id );
 		return;

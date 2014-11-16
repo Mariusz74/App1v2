@@ -15,7 +15,12 @@
 	<bean id="studentJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
 		autowire="byType">
-	</bean>                                        
+	</bean>          
+	
+	<bean id="programJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate" 
+		autowire="byType">
+	</bean>                               
 
 <bean id="Program" class="com.group3.domain.ProgramImpl">
 		

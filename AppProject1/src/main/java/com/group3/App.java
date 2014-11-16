@@ -38,6 +38,9 @@ public class App
 		
 			StudentJDBCTemplate studentJdbcTemplate=(StudentJDBCTemplate)context.getBean("studentJdbcTemplate");
 			studentJdbcTemplate.createStudent("Mary", "O'Brien");
+			
+			ProgramJDBCTemplate programJdbcTemplate=(ProgramJDBCTemplate)context.getBean("programJdbcTemplate");
+			programJdbcTemplate.createProgram("NewProgram1");
 	
     }
 }
