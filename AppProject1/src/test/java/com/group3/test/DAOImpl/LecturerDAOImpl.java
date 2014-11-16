@@ -2,12 +2,12 @@
 /**
  * @Author: Mikhail
  */
-package com.group3.DAOImpl;
+package com.group3.test.DAOImpl;
 
 import java.util.List;
 
 import com.group3.domain.Lecturer;
-import com.group3.interfaces.DAOStub.LecturerDAO;
+import com.group3.test.interfaces.DAOStub.LecturerDAO;
 
 
 /**

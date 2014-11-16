@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.group3.domain.StudentImpl;
 import com.group3.interfaces.Student;
-import com.group3.interfaces.DAOStub.StudentDAO;
+import com.group3.test.interfaces.DAOStub.StudentDAO;
 
 /**
  * @author Mikhail

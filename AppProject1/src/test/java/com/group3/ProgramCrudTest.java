@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 
 import com.group3.domain.*;
 import com.group3.interfaces.*;
-import com.group3.interfaces.DAOStub.ProgramDAO;
+import com.group3.test.interfaces.DAOStub.ProgramDAO;
 
 import static org.junit.Assert.*;
 

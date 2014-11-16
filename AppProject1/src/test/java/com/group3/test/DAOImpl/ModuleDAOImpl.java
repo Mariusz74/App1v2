@@ -2,13 +2,13 @@
 /**
  * @Author: Mikhail
  */
-package com.group3.DAOImpl;
+package com.group3.test.DAOImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.group3.interfaces.Module;
-import com.group3.interfaces.DAOStub.ModuleDAO;
+import com.group3.test.interfaces.DAOStub.ModuleDAO;
 
 
 /**

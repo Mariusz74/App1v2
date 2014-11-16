@@ -18,9 +18,9 @@ import com.group3.domain.ProgramSemesterImpl;
 import com.group3.domain.SemesterImpl;
 import com.group3.interfaces.Semester;
 import com.group3.interfaces.ProgramSemester;
-import com.group3.interfaces.DAOStub.ProgramDAO;
-import com.group3.interfaces.DAOStub.ProgramSemesterDAO;
-import com.group3.interfaces.DAOStub.SemesterDAO;
+import com.group3.test.interfaces.DAOStub.ProgramDAO;
+import com.group3.test.interfaces.DAOStub.ProgramSemesterDAO;
+import com.group3.test.interfaces.DAOStub.SemesterDAO;
 
 /**
  * @author Mikhail

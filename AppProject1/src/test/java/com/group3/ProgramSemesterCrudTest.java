@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.group3.domain.ProgramSemesterImpl;
 import com.group3.interfaces.ProgramSemester;
-import com.group3.interfaces.DAOStub.ProgramSemesterDAO;
+import com.group3.test.interfaces.DAOStub.ProgramSemesterDAO;
 
 
 

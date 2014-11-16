@@ -2,7 +2,7 @@
 /**
  * @Author: Mikhail
  */
-package com.group3.interfaces.DAOStub;
+package com.group3.test.interfaces.DAOStub;
 
 import java.util.List;
 
