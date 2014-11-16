@@ -1,31 +1,32 @@
+// @author Mikhail & Mariusz
 
-/**
- * @Author: Mikhail
- */
 package com.group3.domain;
 
 import com.group3.interfaces.Module;
 
-/**
- * @author Mikhail
- *
- */
 public class ModuleImpl implements Module {
 
 	String name;
-	String ID;
+	int ID;
+	
+	@Override
 	public String getName() {
 		return name;
 	}
+	
+	@Override
 	public void setName(String moduleName) {
 		name = moduleName;
 	}
-	public String getID() {
+	
+	@Override
+	public int getID() {
 		return ID;
 	}
-	public void setID(String moduleID) {
+	
+	@Override
+	public void setID(int moduleID) {
 		ID = moduleID;
 	}
 	
-
 }

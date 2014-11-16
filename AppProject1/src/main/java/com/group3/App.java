@@ -35,19 +35,25 @@ public class App
               getBean("classGroup"); 
 	
 		System.out.println(simpleBeanExample.toString());
-		
+		/*
 			StudentJDBCTemplate studentJdbcTemplate=(StudentJDBCTemplate)context.getBean("studentJdbcTemplate");
 			studentJdbcTemplate.createStudent("Mary", "O'Brien");
 			
 			ProgramJDBCTemplate programJdbcTemplate=(ProgramJDBCTemplate)context.getBean("programJdbcTemplate");
 			programJdbcTemplate.createProgram("NewProgram 2");
 			
-			//SemesterJDBCTemplate semesterJdbcTemplate=(SemesterJDBCTemplate)context.getBean("semesterJdbcTemplate");
-			//semesterJdbcTemplate.createSemester("Semester 1");
-	
-			LecturerJDBCTemplate lecturerJdbcTemplate=(LecturerJDBCTemplate)context.getBean("lecturerJdbcTemplate");
-			
-			Lecturer lect=new Lecturer("name", "sur");
-			lecturerJdbcTemplate.create(lect);
+			SemesterJDBCTemplate semesterJdbcTemplate=(SemesterJDBCTemplate)context.getBean("semesterJdbcTemplate");
+			semesterJdbcTemplate.createSemester("Semester 1");
+		
+			ProgramSemesterJDBCTemplate programsemesterJdbcTemplate=(ProgramSemesterJDBCTemplate)context.getBean("programsemesterJdbcTemplate");
+			programsemesterJdbcTemplate.createProgramSemester(1, 1);
+			programsemesterJdbcTemplate.updateProgramSemester(1, "DCOM4", 4);
+			programsemesterJdbcTemplate.updateProgramSemester2(1, 1, 2);
+			programsemesterJdbcTemplate.deleteProgramSemester(1);	
+		*/
+		ModuleJDBCTemplate moduleJdbcTemplate=(ModuleJDBCTemplate)context.getBean("moduleJdbcTemplate");
+		moduleJdbcTemplate.createModule("Java 1");
+		moduleJdbcTemplate.updateModule(1, "Java 2");
+		moduleJdbcTemplate.deleteModule(1);	
     }
 }
