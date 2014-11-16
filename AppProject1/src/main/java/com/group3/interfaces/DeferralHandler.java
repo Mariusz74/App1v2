@@ -7,9 +7,9 @@ import com.group3.domain.SearchModel;
 /*This is the interface that the lecturer would implement*/
 public interface DeferralHandler {
 
-	public String getID();
+	public int getID();
 
-	public void setID(String iD) ;
+	public void setID(int iD) ;
 	Deferral searchDeferral(SearchModel searchModel);
 	
 	/*
