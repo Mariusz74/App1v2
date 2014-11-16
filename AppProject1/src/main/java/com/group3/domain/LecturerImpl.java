@@ -10,17 +10,35 @@ import com.group3.interfaces.DeferralSearchStrategy;
 import com.group3.interfaces.Lecturer;
 
 public class LecturerImpl implements Lecturer {
-	String Name;
-	String ID;
+	//String Name;
+	//String ID;
 	List<DeferralImpl> deferralList;
-	
-	public LecturerImpl(String Name, String ID)
+	int ID;
+	String firstName;
+	String surName;
+	String login;
+	String password;
+	String email;
+	String address;
+	public LecturerImpl()
 	{
-		this.Name=Name;
+	}	
+	/*
+	public LecturerImpl(String firstName, int ID)
+	{
+		this.firstName=firstName;
 		this.ID=ID;
 		deferralList=new ArrayList<DeferralImpl>();
 	}
-	
+	*/
+	public LecturerImpl(String firstName, String surName)
+	{
+		this.firstName=firstName;
+		this.surName=surName;
+		
+		deferralList=new ArrayList<DeferralImpl>();
+	}
+	/*
 	@Override
 	public String getName() {
 		return Name;
@@ -40,7 +58,77 @@ public class LecturerImpl implements Lecturer {
 	public void setID(String iD) {
 		ID = iD;
 	}
+	*/
 	
+	@Override
+	public int getID() {
+		return ID;
+	}
+
+	@Override
+	public void setID(int iD) {
+		ID = iD;
+	}	
+		
+	@Override
+	public String getFirstName() {
+		return firstName;
+	}
+
+	@Override
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	@Override
+	public String getSurName() {
+		return surName;
+	}
+
+	@Override
+	public void setSurName(String surName) {
+		this.surName = surName;
+	}
+
+	@Override
+	public String getLogin() {
+		return login;
+	}
+
+	@Override
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	@Override
+	public String getPassword() {
+		return password;
+	}
+
+	@Override
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
+	public String getEmail() {
+		return email;
+	}
+
+	@Override
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String getAddress() {
+		return address;
+	}
+
+	@Override
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	//public void assignDeferral(Deferral deferral) {
 	//	deferral.setLecturer(this);
 	//}
@@ -78,7 +166,7 @@ public class LecturerImpl implements Lecturer {
 
 	public String toString()
 	{
-		return "ID: " + this.ID + " Name: " +this.Name +"\n";
+		return "ID: " + this.ID + " Name: " +this.firstName +"\n";
 		
 	}
 }

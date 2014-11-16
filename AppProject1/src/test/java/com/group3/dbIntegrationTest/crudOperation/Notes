@@ -1,0 +1,18 @@
+Author:Mikhail
+
+Note 1:
+The CRUD test cases here are not Unit tests but Integration tests. For this to be a unit test,
+we need to use an in-memory database rather than disk database.
+
+Note 2:
+These test are not well written but it is faster to make it.We don't have much time.
+ For example, many tests methods are not dependent to each other e.g getAll() is used in delete()
+ 
+ Note 3:
+ Each Crud operations cannot be seperated into it's own test classes or test methods because
+ we would need to recreate table every time and repopulate everytime just to test each method. We don't have the time at the
+ moment to figure out how to do it.  
+ 
+ Note 4:
+(see crud tests for details) 
+The code below has to be done like this because tests need to run in this order
