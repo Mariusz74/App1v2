@@ -6,7 +6,7 @@ package com.group3.DAOImpl;
 
 import java.util.List;
 
-import com.group3.domain.Lecturer;
+import com.group3.interfaces.Lecturer;
 import com.group3.interfaces.DAOStub.LecturerDAO;
 
 
