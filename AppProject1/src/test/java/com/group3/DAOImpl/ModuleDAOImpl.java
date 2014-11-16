@@ -1,6 +1,6 @@
 
 /**
- * @Author: Mikhail
+ * @Author: Mikhail & Mariusz
  */
 package com.group3.DAOImpl;
 
@@ -32,10 +32,10 @@ public class ModuleDAOImpl implements ModuleDAO {
 	}
 
 	@Override
-	public boolean delete(String ID) {
+	public boolean delete(int ID) {
 		for(Module def:Modules)
 		{
-			if(def.getID().equalsIgnoreCase(ID)==true)
+			if(def.getID() == ID)
 			{
 				this.Modules.remove(ID);
 				return true;
@@ -60,12 +60,12 @@ public class ModuleDAOImpl implements ModuleDAO {
 	}
 
 	@Override
-	public Module find(String ID) {
+	public Module find(int ID) {
 		Module Module=null;
 		
 		for(Module def:Modules)
 		{
-			if(def.getID().equalsIgnoreCase(ID)==true)
+			if(def.getID() == ID)
 			{
 				Module= def;
 			}

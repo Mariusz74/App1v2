@@ -21,6 +21,11 @@
 		class="com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate" 
 		autowire="byType">
 	</bean>
+	
+	<bean id="moduleJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.ModuleJDBCTemplate" 
+		autowire="byType">
+	</bean>
 	       
 	<bean id="semesterJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" 

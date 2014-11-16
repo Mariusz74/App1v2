@@ -11,6 +11,8 @@ package com.group3.interfaces;
 public interface Module {
 	public String getName();
 	public void setName(String moduleName);
-	public String getID();
-	public void setID(String moduleID);
+	public int getID();
+	public void setID(int moduleID);
+	
+	
 }
