@@ -18,17 +18,21 @@ import com.group3.interfaces.ProgramSemester;
  *TODO add database context
  */
 public class ProgramImpl implements Program{
-	//private ProgramDAO programDAO;
+	
 	List<ProgramSemester> programSemesters;
 	String name;
 	int ID;
 	
 	public  ProgramImpl(String name )
 	{
-		//TODO implement database access
+		
 		this.name=name;
 	}
-
+	public  ProgramImpl()
+	{
+		
+		
+	}
 	
 	public List<ProgramSemester> getProgramSemesters() {
 		return programSemesters;

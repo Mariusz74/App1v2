@@ -52,10 +52,11 @@ public class SemesterCrudTest {
 		create();
 		updateExistingRow();
 		find();
+		getAll();
 		delete();
 		this.deleteNonexistentRecord();
 		this.updateNonexistentRecord();
-		getAll();
+		
 		
 		
 	

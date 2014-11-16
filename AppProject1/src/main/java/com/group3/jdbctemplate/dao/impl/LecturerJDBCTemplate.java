@@ -61,6 +61,7 @@ public class LecturerJDBCTemplate implements LecturerDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
+	//Author:Mikhail
 	public Lecturer find(int ID) {
 
 		String sql = "select * from Lecturer where id= ?";
@@ -73,6 +74,7 @@ public class LecturerJDBCTemplate implements LecturerDAO {
 	}
 
 	@Override
+	//Author:Mikhail
 	public List<Lecturer> getAll() {
 		String sql = "select * from Lecturer";
 		
@@ -87,6 +89,7 @@ public class LecturerJDBCTemplate implements LecturerDAO {
  * to be DI to the lecturerTemplate or to be on a class of its own.
 */	
 @SuppressWarnings("rawtypes")
+//Author:Mikhail
 public class lecturerRowMapper implements RowMapper{
 
 	@Override

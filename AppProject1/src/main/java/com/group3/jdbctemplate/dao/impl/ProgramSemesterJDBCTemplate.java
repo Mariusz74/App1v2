@@ -1,11 +1,23 @@
 //Mariusz S
 package com.group3.jdbctemplate.dao.impl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 import javax.sql.DataSource;
 
+import com.group3.domain.LecturerImpl;
+import com.group3.domain.SemesterImpl;
+import com.group3.interfaces.Lecturer;
+import com.group3.interfaces.Program;
+import com.group3.interfaces.Semester;
 import com.group3.jdbctemplate.dao.ProgramSemesterDAO;
+import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate.lecturerRowMapper;
+import com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate.SemesterRowMapper;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 	
@@ -49,6 +61,7 @@ public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 		//System.out.println("Updated ProgramSemester with ID = " + id + " name = " + idProgram + " quantity = " + idSemester );
 			
 	}
+	
 	
 }
 
