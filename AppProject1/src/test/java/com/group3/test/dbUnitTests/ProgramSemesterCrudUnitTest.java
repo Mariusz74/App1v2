@@ -37,8 +37,6 @@ import com.group3.jdbctemplate.dao.impl.ProgramSemesterJDBCTemplate;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:crudTestConfig.xml")
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,DbUnitTestExecutionListener.class })
-
-
 public class ProgramSemesterCrudUnitTest {
 
 
@@ -47,7 +45,7 @@ public class ProgramSemesterCrudUnitTest {
 		ApplicationContext applicationContext2;
 		
 		@Autowired
-		@Qualifier("semesterJdbcTemplate")
+		@Qualifier("programSemesterJdbcTemplate")
 		ProgramSemesterJDBCTemplate JdbcTemplate;
 		
 		@Autowired

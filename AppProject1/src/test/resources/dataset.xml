@@ -8,5 +8,7 @@
     <Program ID="1" name="testProgram"/>
     
      <Semester ID="1" name="testSem2"/>    
+     
+     <programsemester ID="1" name="classGroup" idSemester="1" idProgram="1"/> 
 </dataset>
 

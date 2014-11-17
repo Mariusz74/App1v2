@@ -4,9 +4,11 @@ package com.group3.jdbctemplate.dao.impl;
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.group3.jdbctemplate.dao.StudentDAO;
 
+@Repository //mikhail:added repository stereotype
 public class StudentJDBCTemplate implements StudentDAO {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;

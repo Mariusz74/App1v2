@@ -20,9 +20,10 @@ import com.group3.interfaces.Student;
  */
 public class ProgramSemesterImpl implements ProgramSemester{
 	
-	
+	int idProgram;
 	Program program;
 	//List<Semester> Semesters;
+	int idSemester;
 	Semester Semester;
   	int CompulsoryModuleQuantity;
 	String name;
@@ -44,6 +45,21 @@ public class ProgramSemesterImpl implements ProgramSemester{
 	}
 
 	
+	public int getidProgram() {
+		return idProgram;
+	}
+
+	public void setidProgram(int idProgram) {
+		this.idProgram = idProgram;
+	}
+
+	public int getidSemester() {
+		return idSemester;
+	}
+
+	public void setidSemester(int idSemester) {
+		this.idSemester = idSemester;
+	}
 
 	public Program getProgram() {
 		return program;

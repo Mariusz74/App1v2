@@ -14,6 +14,11 @@ import org.springframework.beans.factory.annotation.Required;
  */
 public interface ProgramSemester {
 
+	public int getidProgram();
+	public void setidProgram(int idProgram);
+
+	public int getidSemester();
+	public void setidSemester(int idSemester);
 	public Program getProgram() ;
 	public void setProgram(Program program);
 

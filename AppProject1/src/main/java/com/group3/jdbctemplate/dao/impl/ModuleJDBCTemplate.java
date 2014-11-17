@@ -15,7 +15,9 @@ import com.group3.jdbctemplate.dao.ModuleDAO;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
+@Repository //mikhail:added repository stereotype
 public class ModuleJDBCTemplate implements ModuleDAO {
 	
 	private DataSource dataSource;

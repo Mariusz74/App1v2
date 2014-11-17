@@ -36,6 +36,8 @@
 		class="com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate" autowire="byType">
 	</bean>
 	
+	
+	
 	<bean id="semesterJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" autowire="byType">
 	</bean>
@@ -62,6 +64,15 @@
 		<property name="name" value="testProgram"></property>
 	</bean>
 	
+	<bean id="programSemesterJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.ProgramSemesterJDBCTemplate" autowire="byType">
+	</bean>
 	
+	<bean id="programSemesterTest" 
+		class="com.group3.domain.ProgramSemesterImpl">
+		<property name="name" value="testProgram"></property>
+		<property name="idSemester" value="1"></property>
+		<property name="idProgram" value="1"></property>
+	</bean>
 	
 </beans>

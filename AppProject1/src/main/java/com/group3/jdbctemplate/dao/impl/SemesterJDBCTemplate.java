@@ -8,6 +8,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 
+
 import com.group3.domain.SemesterImpl;
 import com.group3.interfaces.Semester;
 import com.group3.jdbctemplate.dao.SemesterDAO;
@@ -15,9 +16,10 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate.lecturerRowMapper;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 
-
+@Repository //mikhail:added repository stereotype
 public class SemesterJDBCTemplate implements SemesterDAO {
 	
 	private DataSource dataSource;
