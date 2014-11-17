@@ -26,14 +26,14 @@ public class App
     {
    
     	System.out.println( "Hello World!" );
-		context=new ClassPathXmlApplicationContext
-                ("configuration.xml"); 
-		
+		context=new ClassPathXmlApplicationContext("configuration.xml"); 
+	//System.out.println( "Hello World2!" );		
 	// Simple bean blank constructor 
-	ProgramSemesterImpl simpleBeanExample=(ProgramSemesterImpl)context.
-              getBean("classGroup"); 
-	
-		System.out.println(simpleBeanExample.toString());
+		
+	//ProgramSemesterImpl simpleBeanExample=(ProgramSemesterImpl)context.
+     //         getBean("classGroup"); 
+
+	//	System.out.println(simpleBeanExample.toString());
 		/*
 			StudentJDBCTemplate studentJdbcTemplate=(StudentJDBCTemplate)context.getBean("studentJdbcTemplate");
 			studentJdbcTemplate.createStudent("Mary", "O'Brien");
@@ -55,5 +55,10 @@ public class App
 //		moduleJdbcTemplate.createModule("Java 1");
 //		moduleJdbcTemplate.updateModule(1, "Java 2");
 //		moduleJdbcTemplate.deleteModule(1);	
+		
+		DeferralJDBCTemplate deferralJdbcTemplate=(DeferralJDBCTemplate)context.getBean("deferralJdbcTemplate");
+		deferralJdbcTemplate.createDeferral("About Java", 1, 1);
+		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2);
+		deferralJdbcTemplate.deleteDeferral(1);	
     }
 }

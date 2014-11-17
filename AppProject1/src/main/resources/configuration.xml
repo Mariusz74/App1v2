@@ -34,8 +34,14 @@
 	<bean id="programsemesterJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.ProgramSemesterJDBCTemplate" 
 		autowire="byType">
-	</bean>                    
-<bean id="lecturerJdbcTemplate" 
+	</bean>  
+	
+	<bean id="deferralJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.DeferralJDBCTemplate" 
+		autowire="byType">
+	</bean>  
+	                  
+	<bean id="lecturerJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate" 
 		autowire="byType">
 	</bean> 
@@ -49,6 +55,7 @@
 		<constructor-arg name="name" value="4"></constructor-arg>
 </bean>
 
+<!--  
 <bean id="classGroup" class="com.group3.domain.ProgramSemesterImpl">
 		<constructor-arg name="SemesterList" ref="Semester"></constructor-arg>
 		<constructor-arg name="classgroupName" value="Dcom1"></constructor-arg>
@@ -56,7 +63,7 @@
 		<constructor-arg name="program" ref="Program"></constructor-arg>
 </bean>
 
-
+-->
 
 
 </beans>
