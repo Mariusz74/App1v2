@@ -7,10 +7,10 @@ public interface ModuleLecturer {
 	public int getID();
 	public void setID(int moduleID);
 	
-	public List<Lecturer> getLecturer();
-	public void setLecturer(List<Lecturer> lecturer);
+	public Lecturer getLecturer();
+	public void setLecturer(Lecturer lecturer);
 	
-	public List<Student> getStudents();
-	public void setStudents(List<Student> students);
+	public Module getModule();
+	public void setModule(Module module);
 
 }
