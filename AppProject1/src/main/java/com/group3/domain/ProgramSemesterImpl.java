@@ -19,10 +19,13 @@ import com.group3.interfaces.Student;
  *
  */
 public class ProgramSemesterImpl implements ProgramSemester{
+	
+	
 	Program program;
-	List<Semester> Semesters;
-    int yearNumber;
-	String classgroupName;
+	//List<Semester> Semesters;
+	Semester Semester;
+  	int CompulsoryModuleQuantity;
+	String name;
 	List<Student> students;
 	int ID;
 	
@@ -31,11 +34,11 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 	public ProgramSemesterImpl(){}
 	
-	public ProgramSemesterImpl(List<Semester> SemesterList, String classgroupName, int yearNumber, Program program)
+	public ProgramSemesterImpl(Semester Semester, String classgroupName, int CompulsoryModuleQuantity, Program program)
 	{
-		this.Semesters= SemesterList;
-		this.classgroupName=classgroupName;
-		this.yearNumber=yearNumber;
+		this.Semester= Semester;
+		this.name=classgroupName;
+		this.CompulsoryModuleQuantity=CompulsoryModuleQuantity;
 		this.program=program;
 		
 	}
@@ -52,33 +55,33 @@ public class ProgramSemesterImpl implements ProgramSemester{
 	}
 
 
-	public List<Semester> getSemesters() {
-		return Semesters;
+	public Semester getSemester() {
+		return Semester;
 	}
 
 
-	public void setSemesters(List<Semester> semesters) {
-		Semesters = semesters;
+	public void setSemester(Semester Semester) {
+		this.Semester = Semester;
 	}
 
 
-	public int getYearNumber() {
-		return yearNumber;
+	public int getCompulsoryModuleQuantity() {
+		return CompulsoryModuleQuantity;
 	}
 
 
-	public void setYearNumber(int yearNumber) {
-		this.yearNumber = yearNumber;
+	public void setCompulsoryModuleQuantity(int CompulsoryModuleQuantity) {
+		this.CompulsoryModuleQuantity = CompulsoryModuleQuantity;
 	}
 
 
-	public String getClassgroupName() {
-		return classgroupName;
+	public String getName() {
+		return name;
 	}
 
 
-	public void setClassgroupName(String classgroupName) {
-		this.classgroupName = classgroupName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
@@ -100,6 +103,8 @@ public class ProgramSemesterImpl implements ProgramSemester{
 	public void setID(int iD) {
 		ID = iD;
 	}
+
+	
 
 	
 	

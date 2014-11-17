@@ -17,14 +17,12 @@ public interface ProgramSemester {
 	public Program getProgram() ;
 	public void setProgram(Program program);
 
-	public List<Semester> getSemesters();
-	public void setSemesters(List<Semester> semesters);
+	public Semester getSemester();
+	public void setSemester(Semester Semester);
 
-	public int getYearNumber();
-	public void setYearNumber(int yearNumber);
 
-	public String getClassgroupName();
-	public void setClassgroupName(String classgroupName) ;
+	public String getName();
+	public void setName(String name) ;
 	
 	public List<Student> getStudents();
 	public void setStudents(List<Student> students);
@@ -32,5 +30,7 @@ public interface ProgramSemester {
 	public int getID();
 	public void setID(int ID);
 	
-	
+	public int getCompulsoryModuleQuantity();
+
+	public void setCompulsoryModuleQuantity(int CompulsoryModuleQuantity);
 }
