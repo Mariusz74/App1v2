@@ -1,22 +1,21 @@
 
 /**
- * @Author: Mikhail Nov 16, 2014_10:47:24 PM
+ * @Author: Mikhail Nov 17, 2014_4:26:41 AM
  */
 package com.group3.test.dbUnitTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -29,12 +28,12 @@ import com.group3.domain.LecturerImpl;
 import com.group3.interfaces.Lecturer;
 import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 
-
 /**
  * @author Mikhail
  *
- * Nov 16, 2014_10:47:24 PM
+ * Nov 17, 2014_4:26:41 AM
  */
+public class ProgramCrudUnitTest {
 	@RunWith(SpringJUnit4ClassRunner.class)
 	@ContextConfiguration("classpath:crudTestConfig.xml")
 	@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,DbUnitTestExecutionListener.class })
@@ -65,15 +64,14 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 		public void updateExistingRecord() {
-			newObject.setID(1);
-			int affectedRows=JdbcTemplate.update(newObject);	
+			int affectedRows=JdbcTemplate.update(object);	
 			//fails if no rows affected
 			assertNotEquals("creation failed",0, affectedRows);
 		}
 		
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)	
-		public void delete()
+		private void delete()
 		{
 			//in the dataset, the first record has id of 1
 			int firstRecordID=1;
@@ -85,7 +83,7 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.DELETE_ALL)
-		public void updateNonexistentRecord()
+		private void updateNonexistentRecord()
 		{
 			//simulates a deleted record
 			
@@ -99,7 +97,7 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 		
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.DELETE_ALL)
-		public void deleteNonexistentRecord()
+		private void deleteNonexistentRecord()
 		{
 			int rowsAffected=0;
 			rowsAffected=JdbcTemplate.delete(1);
@@ -109,7 +107,7 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
-		public void getAll()
+		private void getAll()
 		{
 			List<Lecturer> objects;
 			//there can't be an id of 0
@@ -119,7 +117,7 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 		
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
-		public void find()
+		private void find()
 		{
 			Lecturer object;
 			object=JdbcTemplate.find(1);
@@ -128,6 +126,9 @@ import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate;
 		}
 		
 		
+		@AfterClass
+		public void destroy() {
 		
-		
+		}
+	}
 }
