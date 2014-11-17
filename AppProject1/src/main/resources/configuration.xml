@@ -50,9 +50,9 @@
 </bean>
 
 <bean id="classGroup" class="com.group3.domain.ProgramSemesterImpl">
-		<constructor-arg name="SemesterList" ref="Semester"></constructor-arg>
+		<constructor-arg name="Semester" ref="Semester"></constructor-arg>
 		<constructor-arg name="classgroupName" value="Dcom1"></constructor-arg>
-		<constructor-arg name="yearNumber" value="1"></constructor-arg>
+		<constructor-arg name="CompulsoryModuleQuantity" value="1"></constructor-arg>
 		<constructor-arg name="program" ref="Program"></constructor-arg>
 </bean>
 
