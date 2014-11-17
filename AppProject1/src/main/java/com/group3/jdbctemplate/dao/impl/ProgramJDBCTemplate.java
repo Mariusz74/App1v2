@@ -60,7 +60,7 @@ public class ProgramJDBCTemplate implements ProgramDAO {
 		String sql = "select * from Program";
 		
 		List<Program> objs = jdbcTemplateObject.query(sql, 
-				new SemesterRowMapper());
+				new ProgramRowMapper());
 		return objs;
 
 	}
@@ -73,7 +73,7 @@ public class ProgramJDBCTemplate implements ProgramDAO {
 	String sql = "select * from Program where id= ?";
 		
 		Program obj = (Program) jdbcTemplateObject.queryForObject(sql, 
-				  new Object[] {ID}, new SemesterRowMapper());
+				  new Object[] {ID}, new ProgramRowMapper());
 		return obj;
 	
 	}
@@ -83,7 +83,7 @@ public class ProgramJDBCTemplate implements ProgramDAO {
 	 * to be DI to the lecturerTemplate or to be on a class of its own.
 	*/	
 	@SuppressWarnings("rawtypes")
-	public class SemesterRowMapper implements RowMapper{
+	public class ProgramRowMapper implements RowMapper{
 
 	@Override
 	public Object mapRow(ResultSet rs, int rowID) throws SQLException {

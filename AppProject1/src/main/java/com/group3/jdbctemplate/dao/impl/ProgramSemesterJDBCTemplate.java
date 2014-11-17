@@ -8,12 +8,17 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.group3.domain.LecturerImpl;
+import com.group3.domain.ModuleImpl;
+import com.group3.domain.ProgramSemesterImpl;
 import com.group3.domain.SemesterImpl;
 import com.group3.interfaces.Lecturer;
+import com.group3.interfaces.Module;
 import com.group3.interfaces.Program;
+import com.group3.interfaces.ProgramSemester;
 import com.group3.interfaces.Semester;
 import com.group3.jdbctemplate.dao.ProgramSemesterDAO;
 import com.group3.jdbctemplate.dao.impl.LecturerJDBCTemplate.lecturerRowMapper;
+import com.group3.jdbctemplate.dao.impl.ModuleJDBCTemplate.ModuleRowMapper;
 import com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate.SemesterRowMapper;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -63,5 +68,47 @@ public class ProgramSemesterJDBCTemplate implements ProgramSemesterDAO {
 	}
 	
 	
-}
+	/**
+	 * @ Author: Donal
+	 */
+	public List<ProgramSemester> getAll() {
+//		String sql = "select * from ProgramSemester";
+		
+		String sql = "SELECT * FROM `programsemester` JOIN semester WHERE semester.id = programsemester.idSemester";
+		
+		List<ProgramSemester> programSemesters = jdbcTemplateObject.query(sql, 
+				new ProgramSemesterRowMapper());
+		return programSemesters;
 
+	}
+
+	/**
+	 * @ Author: Donal
+	 */
+	@SuppressWarnings("unchecked")
+	public ProgramSemester find(int ID) {
+	String sql = "select * from ProgramSemester where id= ?";
+		
+	ProgramSemester programSemesters = (ProgramSemester) jdbcTemplateObject.queryForObject(sql, 
+				  new Object[] {ID}, new ProgramSemesterRowMapper());
+		return programSemesters;
+	
+	}
+	
+	/*
+	 * row mapper class for ProgramSemester. 
+	*/	
+	@SuppressWarnings("rawtypes")
+	//Author:Dónal
+	public class ProgramSemesterRowMapper implements RowMapper{
+
+		@Override
+		public Object mapRow(ResultSet rs, int rowID) throws SQLException {
+			
+			ProgramSemesterImpl programSemester = new ProgramSemesterImpl();
+			return programSemester;
+		}
+	}
+	
+}
+//	List<Semester> SemesterList, String classgroupName, int yearNumber, Program program

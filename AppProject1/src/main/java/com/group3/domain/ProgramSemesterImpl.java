@@ -29,6 +29,8 @@ public class ProgramSemesterImpl implements ProgramSemester{
 
 	//TODO implement database access
 
+	public ProgramSemesterImpl(){}
+	
 	public ProgramSemesterImpl(List<Semester> SemesterList, String classgroupName, int yearNumber, Program program)
 	{
 		this.Semesters= SemesterList;
@@ -38,6 +40,7 @@ public class ProgramSemesterImpl implements ProgramSemester{
 		
 	}
 
+	
 
 	public Program getProgram() {
 		return program;

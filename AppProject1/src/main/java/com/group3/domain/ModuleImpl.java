@@ -2,12 +2,20 @@
 
 package com.group3.domain;
 
+import java.util.ArrayList;
+
 import com.group3.interfaces.Module;
 
 public class ModuleImpl implements Module {
 
 	String name;
 	int ID;
+	
+	public ModuleImpl(String moduleName, int moduleID)
+	{
+		this.name=moduleName;
+		this.ID=moduleID;
+	}
 	
 	@Override
 	public String getName() {

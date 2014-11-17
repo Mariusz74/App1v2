@@ -50,9 +50,10 @@ public class App
 			programsemesterJdbcTemplate.updateProgramSemester2(1, 1, 2);
 			programsemesterJdbcTemplate.deleteProgramSemester(1);	
 		*/
-		ModuleJDBCTemplate moduleJdbcTemplate=(ModuleJDBCTemplate)context.getBean("moduleJdbcTemplate");
-		moduleJdbcTemplate.createModule("Java 1");
-		moduleJdbcTemplate.updateModule(1, "Java 2");
-		moduleJdbcTemplate.deleteModule(1);	
+		
+//		ModuleJDBCTemplate moduleJdbcTemplate=(ModuleJDBCTemplate)context.getBean("moduleJdbcTemplate");
+//		moduleJdbcTemplate.createModule("Java 1");
+//		moduleJdbcTemplate.updateModule(1, "Java 2");
+//		moduleJdbcTemplate.deleteModule(1);	
     }
 }

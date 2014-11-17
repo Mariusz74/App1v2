@@ -44,8 +44,13 @@
 		<constructor-arg name="name" value="SoftDev"></constructor-arg>
 </bean>
 
+<bean id="Semester" class="com.group3.domain.SemesterImpl">
+		
+		<constructor-arg name="name" value="4"></constructor-arg>
+</bean>
+
 <bean id="classGroup" class="com.group3.domain.ProgramSemesterImpl">
-		<constructor-arg name="SemesterList" ref="Semesters"></constructor-arg>
+		<constructor-arg name="SemesterList" ref="Semester"></constructor-arg>
 		<constructor-arg name="classgroupName" value="Dcom1"></constructor-arg>
 		<constructor-arg name="yearNumber" value="1"></constructor-arg>
 		<constructor-arg name="program" ref="Program"></constructor-arg>
