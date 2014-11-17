@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<!-- @Author:Mikhail -->
-                 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+	
+	<context:annotation-config/>
+	<context:component-scan base-package="com.group3" />
+	
+	
+	<!-- @Author:Mikhail -->
+                
  
 	<bean id="dataSource" 
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -30,6 +40,11 @@
 		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" autowire="byType">
 	</bean>
 	
+	<bean id="applicationContext2" 
+		class="com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate" autowire="byType">
+	</bean>
+	
+	
 	<bean id="semesterTest" class="com.group3.domain.SemesterImpl">
 		<property name="name" value="testSem"></property>
 	</bean>
@@ -49,11 +64,6 @@
 		<property name="name" value="testProgram"></property>
 	</bean>
 	
+	
+	
 </beans>
-
-<!-- 
-
-
-
-
- -->

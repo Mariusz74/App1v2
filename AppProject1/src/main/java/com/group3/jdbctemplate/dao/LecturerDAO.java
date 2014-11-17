@@ -21,5 +21,6 @@ public interface LecturerDAO {
 	public int update(Lecturer lecturer);
 	public Lecturer find(int ID);
 	public List<Lecturer> getAll();
+	public int countRows();   
 	
 }

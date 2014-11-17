@@ -13,16 +13,19 @@ import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import com.group3.domain.LecturerImpl;
 import com.group3.interfaces.Lecturer;
 import com.group3.jdbctemplate.dao.LecturerDAO;
+
 
 /**
  * @author Mikhail
  *
  * Nov 16, 2014_11:04:08 AM
  */
+@Repository
 public class LecturerJDBCTemplate implements LecturerDAO {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
@@ -82,8 +85,16 @@ public class LecturerJDBCTemplate implements LecturerDAO {
 		return lecturerList;
 
 	}
+	
+	@Override
+	public int countRows() {
+		String SQL = "select count(*) from Lecturer";
+		//return row count
+		return jdbcTemplateObject.queryForObject(SQL, Integer.class);
+		
+	}
 
-
+	
 /*row mapper class for lecturer. This is an inner class because there is no need for a rowmapper object 
  * to be DI to the lecturerTemplate or to be on a class of its own.
 */	
@@ -107,5 +118,8 @@ public class lecturerRowMapper implements RowMapper{
 		
 						
 	}
+
+
+
 }
 
