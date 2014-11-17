@@ -28,6 +28,9 @@ public class StudentImpl implements Student {
 	ProgramSemester classgroup;
 	List<Deferral> deferrals;
 	
+	public StudentImpl()
+	{}
+	
 	@Override
 	public int getID() {
 		return ID;

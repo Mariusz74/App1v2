@@ -23,11 +23,7 @@
 		<property name="password" value="test1"/>
 	</bean>
 	
-	          	<bean id="studentJdbcTemplate" 
-		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
-		autowire="byType">
-	</bean>  
-	
+	        
 	<bean id="programJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate"  autowire="byType">
 	</bean>
@@ -73,6 +69,25 @@
 		<property name="name" value="testProgram"></property>
 		<property name="idSemester" value="1"></property>
 		<property name="idProgram" value="1"></property>
+	</bean>
+	
+	<bean id="moduleJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.ModuleJDBCTemplate" autowire="byType">
+	</bean>
+	
+	<bean id="moduleTest" 
+		class="com.group3.domain.ModuleImpl">
+		<property name="name" value="testModule"></property>
+	</bean>
+	
+	
+	<bean id="studentJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" autowire="byType">
+	</bean>
+	
+	<bean id="studentTest" 
+		class="com.group3.domain.StudentImpl">
+		<property name="firstName" value="testStudent"></property>
 	</bean>
 	
 </beans>

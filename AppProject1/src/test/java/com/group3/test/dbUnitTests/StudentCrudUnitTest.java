@@ -1,6 +1,6 @@
 
 /**
- * @Author: Mikhail Nov 17, 2014_5:36:43 AM
+ * @Author: Mikhail Nov 17, 2014_9:08:14 AM
  */
 package com.group3.test.dbUnitTests;
 
@@ -24,20 +24,19 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.group3.domain.ProgramSemesterImpl;
-import com.group3.interfaces.ProgramSemester;
-import com.group3.jdbctemplate.dao.impl.ProgramSemesterJDBCTemplate;
+import com.group3.domain.StudentImpl;
+import com.group3.interfaces.Student;
+import com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate;
 
 /**
  * @author Mikhail
  *
- * Nov 17, 2014_5:36:43 AM
+ * Nov 17, 2014_9:08:14 AM
  */
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:crudTestConfig.xml")
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class,DbUnitTestExecutionListener.class })
-public class ProgramSemesterCrudUnitTest {
+public class StudentCrudUnitTest {
 
 
 
@@ -45,29 +44,28 @@ public class ProgramSemesterCrudUnitTest {
 		ApplicationContext applicationContext2;
 		
 		@Autowired
-		@Qualifier("programSemesterJdbcTemplate")
-		ProgramSemesterJDBCTemplate JdbcTemplate;
+		@Qualifier("studentJdbcTemplate")
+		StudentJDBCTemplate JdbcTemplate;
 		
 		@Autowired
-		@Qualifier("programSemesterTest")
-		ProgramSemester object;
+		@Qualifier("studentTest")
+		StudentImpl object;
 		
-		ProgramSemester newObject;
+		Student newObject;
 		
 		@Before
 		public void init()
 		{
-			newObject=new ProgramSemesterImpl();
-			newObject.setName("test");
+			newObject=new StudentImpl();
+			newObject.setFirstName("fname");
+			newObject.setSurName("sname");
 		}
 		
 		@Test
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 		public void create() {
-			//Mikhail-11/17/14: This test will fail because idSemester and idProgram is already assigned another ProgramSemester
-			//is this intentional or a redesign is necessary?
 			
-			int affectedRows=JdbcTemplate.createProgramSemester(object.getProgram().getID(),object.getSemester().getID());	
+			int affectedRows=JdbcTemplate.createStudent(object.getFirstName(),object.getSurName());	
 			//fails if no rows affected
 			assertNotEquals("creation failed",0, affectedRows);
 		}
@@ -76,7 +74,9 @@ public class ProgramSemesterCrudUnitTest {
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 		public void updateExistingRecord() {
 			newObject.setID(1);
-			int affectedRows=JdbcTemplate.updateProgramSemester(newObject.getID(),newObject.getName(),newObject.getCompulsoryModuleQuantity());	
+			int affectedRows=JdbcTemplate.updateStudent(newObject.getID(),newObject.getFirstName(),newObject.getSurName(),
+					newObject.getLogin(),newObject.getPassword(),newObject.getEmail(),newObject.getAddress()
+					);	
 			//fails if no rows affected
 			assertNotEquals("creation failed",0, affectedRows);
 		}
@@ -88,7 +88,7 @@ public class ProgramSemesterCrudUnitTest {
 			//in the dataset, the first record has id of 1
 			int firstRecordID=1;
 			int rowsAffected=0;
-			rowsAffected=JdbcTemplate.deleteProgramSemester(firstRecordID);
+			rowsAffected=JdbcTemplate.deleteStudent(firstRecordID);
 			//fail if there is no record that has been deleted
 			assertNotEquals("No rows delete",0,rowsAffected);
 		}
@@ -101,8 +101,9 @@ public class ProgramSemesterCrudUnitTest {
 			
 			newObject.setID(1);
 			int rowsAffected=0;
-			
-			rowsAffected=JdbcTemplate.updateProgramSemester(newObject.getID(),newObject.getName(),newObject.getCompulsoryModuleQuantity());	
+			rowsAffected=JdbcTemplate.updateStudent(newObject.getID(),newObject.getFirstName(),newObject.getSurName(),
+					newObject.getLogin(),newObject.getPassword(),newObject.getEmail(),newObject.getAddress()
+					);	
 			//fail if there is a record that has been updated
 			assertEquals("Rows were updated", 0, rowsAffected);
 		}
@@ -112,7 +113,7 @@ public class ProgramSemesterCrudUnitTest {
 		public void deleteNonexistentRecord()
 		{
 			int rowsAffected=0;
-			rowsAffected=JdbcTemplate.deleteProgramSemester(1);
+			rowsAffected=JdbcTemplate.deleteStudent(1);
 			//fail if there is record that has been deleted
 			assertEquals("Rows deleted",0,rowsAffected);
 		}
@@ -121,7 +122,8 @@ public class ProgramSemesterCrudUnitTest {
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 		public void getAll()
 		{
-			List<ProgramSemester> objects;
+			//mikhail-11/17/2014:test will fail because there are still unimplemented methods
+			List<Student> objects;
 			//there can't be an id of 0
 			objects=JdbcTemplate.getAll();
 			assertNotEquals("No rows fetched",0,objects.size());
@@ -131,7 +133,8 @@ public class ProgramSemesterCrudUnitTest {
 		@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 		public void find()
 		{
-			ProgramSemester object;
+			//mikhail-11/17/2014:test will fail because there are still unimplemented methods
+			Student object;
 			object=JdbcTemplate.find(1);
 			//fail if empty record
 			assertNotNull(object);
@@ -140,4 +143,3 @@ public class ProgramSemesterCrudUnitTest {
 		
 		
 	}
-

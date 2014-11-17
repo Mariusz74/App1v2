@@ -10,5 +10,10 @@
      <Semester ID="1" name="testSem2"/>    
      
      <programsemester ID="1" name="classGroup" idSemester="1" idProgram="1"/> 
+     
+     <Module ID="1" name="moduleTest"/> 
+        
+     <Student ID="1" firstName="studentTest"/>
+      
 </dataset>
 

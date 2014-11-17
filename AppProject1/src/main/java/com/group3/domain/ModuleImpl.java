@@ -17,6 +17,13 @@ public class ModuleImpl implements Module {
 		this.ID=moduleID;
 	}
 	
+	/**
+	 * 
+	 */
+	public ModuleImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String getName() {
 		return name;

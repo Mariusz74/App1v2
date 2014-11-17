@@ -1,11 +1,14 @@
 // Mariusz S
 package com.group3.jdbctemplate.dao.impl;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.group3.interfaces.Student;
 import com.group3.jdbctemplate.dao.StudentDAO;
 
 @Repository //mikhail:added repository stereotype
@@ -16,7 +19,7 @@ public class StudentJDBCTemplate implements StudentDAO {
 	// @Override
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
-		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
+		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 
 	@Override
@@ -53,6 +56,24 @@ public class StudentJDBCTemplate implements StudentDAO {
 		//System.out.println("Updated Record with ID = " + id );
 		//return;	
 
+	}
+
+	/**@ Author: Mikhail
+	 * Nov 17, 2014_9:17:41 AM
+	 * Waiting for Donal to implement this
+	 */
+	public List<Student> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**@ Author: Mikhail
+	 * Nov 17, 2014_9:17:45 AM
+	 * Waiting for Donal to implement this
+	 */
+	public Student find(int i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
