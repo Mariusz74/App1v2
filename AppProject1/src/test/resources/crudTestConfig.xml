@@ -49,8 +49,6 @@
 		<property name="name" value="testSem"></property>
 	</bean>
 	
-	
-	
 	<bean id="lecturerTest" 
 		class="com.group3.domain.LecturerImpl">
 		<property name="firstName" value="mary"></property>

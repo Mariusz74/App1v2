@@ -3,5 +3,10 @@
 
 <dataset>
     <Lecturer ID="1" firstname="Mary" surname="Mi"/>
-    <Lecturer ID="2" firstname="Noelle" surname="Ironmaiden"/>
+    <Lecturer ID="2" firstname="Noelle" surname="Ironmaiden"/>   
+    
+    <Program ID="1" name="testProgram"/>
+    
+     <Semester ID="1" name="testSem2"/>    
 </dataset>
+

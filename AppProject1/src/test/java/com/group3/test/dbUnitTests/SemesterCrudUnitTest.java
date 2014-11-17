@@ -1,6 +1,6 @@
 
 /**
- * @Author: Mikhail Nov 17, 2014_4:26:41 AM
+ * @Author: Mikhail Nov 17, 2014_5:08:12 AM
  */
 package com.group3.test.dbUnitTests;
 
@@ -10,7 +10,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,14 +24,15 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
 import com.github.springtestdbunit.annotation.DatabaseOperation;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.group3.domain.ProgramImpl;
-import com.group3.interfaces.Program;
-import com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate;
+import com.group3.domain.SemesterImpl;
+import com.group3.interfaces.Semester;
+import com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate;
+import com.group3.jdbctemplate.dao.impl.SemesterJDBCTemplate;
 
 /**
  * @author Mikhail
  *
- * Nov 17, 2014_4:26:41 AM
+ * Nov 17, 2014_5:08:12 AM
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -41,24 +41,24 @@ import com.group3.jdbctemplate.dao.impl.ProgramJDBCTemplate;
 
 
 
-public class ProgramCrudUnitTest {
+public class SemesterCrudUnitTest {
 	@Autowired
 	ApplicationContext applicationContext2;
 	
 	@Autowired
-	@Qualifier("programJdbcTemplate")
-	ProgramJDBCTemplate JdbcTemplate;
+	@Qualifier("semesterJdbcTemplate")
+	SemesterJDBCTemplate JdbcTemplate;
 	
 	@Autowired
-	@Qualifier("programTest")
-	Program object;
+	@Qualifier("semesterTest")
+	Semester object;
 	
-	Program newObject;
+	Semester newObject;
 	
 	@Before
 	public void init()
 	{
-		newObject=new ProgramImpl();
+		newObject=new SemesterImpl();
 		newObject.setName("test");
 	}
 	
@@ -66,7 +66,7 @@ public class ProgramCrudUnitTest {
 	@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 	public void create() {
 		//
-		int affectedRows=JdbcTemplate.createProgram(object.getName());	
+		int affectedRows=JdbcTemplate.createSemester(object.getName());	
 		//fails if no rows affected
 		assertNotEquals("creation failed",0, affectedRows);
 	}
@@ -75,7 +75,7 @@ public class ProgramCrudUnitTest {
 	@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 	public void updateExistingRecord() {
 		newObject.setID(1);
-		int affectedRows=JdbcTemplate.updateProgram(newObject.getID(),newObject.getName());	
+		int affectedRows=JdbcTemplate.updateSemester(newObject.getID(),newObject.getName());	
 		//fails if no rows affected
 		assertNotEquals("creation failed",0, affectedRows);
 	}
@@ -87,7 +87,7 @@ public class ProgramCrudUnitTest {
 		//in the dataset, the first record has id of 1
 		int firstRecordID=1;
 		int rowsAffected=0;
-		rowsAffected=JdbcTemplate.deleteProgram(firstRecordID);
+		rowsAffected=JdbcTemplate.deleteSemester(firstRecordID);
 		//fail if there is no record that has been deleted
 		assertNotEquals("No rows delete",0,rowsAffected);
 	}
@@ -101,7 +101,7 @@ public class ProgramCrudUnitTest {
 		newObject.setID(1);
 		int rowsAffected=0;
 		
-		rowsAffected=JdbcTemplate.updateProgram(newObject.getID(),newObject.getName());	
+		rowsAffected=JdbcTemplate.updateSemester(newObject.getID(),newObject.getName());	
 		//fail if there is a record that has been updated
 		assertEquals("Rows were updated", 0, rowsAffected);
 	}
@@ -111,7 +111,7 @@ public class ProgramCrudUnitTest {
 	public void deleteNonexistentRecord()
 	{
 		int rowsAffected=0;
-		rowsAffected=JdbcTemplate.deleteProgram(1);
+		rowsAffected=JdbcTemplate.deleteSemester(1);
 		//fail if there is record that has been deleted
 		assertEquals("Rows deleted",0,rowsAffected);
 	}
@@ -120,7 +120,7 @@ public class ProgramCrudUnitTest {
 	@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 	public void getAll()
 	{
-		List<Program> objects;
+		List<Semester> objects;
 		//there can't be an id of 0
 		objects=JdbcTemplate.getAll();
 		assertNotEquals("No rows fetched",0,objects.size());
@@ -130,7 +130,7 @@ public class ProgramCrudUnitTest {
 	@DatabaseSetup(value="classpath:dataset.xml", type=DatabaseOperation.CLEAN_INSERT)
 	public void find()
 	{
-		Program object;
+		Semester object;
 		object=JdbcTemplate.find(1);
 		//fail if empty record
 		assertNotNull(object);
