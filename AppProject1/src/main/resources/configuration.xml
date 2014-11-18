@@ -11,7 +11,12 @@
 		<property name="username" value="test1"/>
 		<property name="password" value="test1"/>
 	</bean>
-	
+
+	<bean id="programSemesterModuleLecturer" 
+		class="com.group3.jdbctemplate.dao.impl.ProgramSemesterModuleLecturerJDBCTemplate" 
+		autowire="byType">
+	</bean>          	
+		
 	<bean id="studentJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
 		autowire="byType">
