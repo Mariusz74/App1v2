@@ -36,6 +36,11 @@
 		autowire="byType">
 	</bean>  
 	
+	<bean id="modulelecturerJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.ModuleLecturerJDBCTemplate" 
+		autowire="byType">
+	</bean> 
+	
 	<bean id="deferralJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.DeferralJDBCTemplate" 
 		autowire="byType">
