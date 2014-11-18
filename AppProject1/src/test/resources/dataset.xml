@@ -15,5 +15,7 @@
         
      <Student ID="1" firstName="studentTest"/>
       
+      
+       <Student ID="1" idProgramSemester="1" idModuleLecturer="1"/>
 </dataset>
 

@@ -90,4 +90,16 @@
 		<property name="firstName" value="testStudent"></property>
 	</bean>
 	
+
+	<bean id="2" 
+		class="com.group3.domain.ProgramSemesterModuleLecturerImpl">
+		<property name="idModuleLecturer" value="2"></property>
+		<property name="IdProgramSemester" value="2"></property>
+	</bean>
+	
+	<bean id="1" 
+		class="com.group3.jdbctemplate.dao.impl.ProgramSemesterModuleLecturerJDBCTemplate" 
+		autowire="byType">
+	</bean>  
+	
 </beans>
