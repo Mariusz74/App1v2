@@ -12,7 +12,7 @@
 		<property name="password" value="test1"/>
 	</bean>
 
-	<bean id="programSemesterModuleLecturer" 
+	<bean id="programSemesterModuleLecturerJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.ProgramSemesterModuleLecturerJDBCTemplate" 
 		autowire="byType">
 	</bean>          	
