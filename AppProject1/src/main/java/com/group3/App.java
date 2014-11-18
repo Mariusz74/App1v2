@@ -56,9 +56,13 @@ public class App
 //		moduleJdbcTemplate.updateModule(1, "Java 2");
 //		moduleJdbcTemplate.deleteModule(1);	
 		
-		DeferralJDBCTemplate deferralJdbcTemplate=(DeferralJDBCTemplate)context.getBean("deferralJdbcTemplate");
-		deferralJdbcTemplate.createDeferral("About Java", 1, 1);
-		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2);
-		deferralJdbcTemplate.deleteDeferral(1);	
+//		deferralJdbcTemplate.createDeferral("About Java", 1, 1);
+//		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2);
+//		deferralJdbcTemplate.deleteDeferral(1);	
+		
+		ModuleLecturerJDBCTemplate moduleLecturerJdbcTemplate=(ModuleLecturerJDBCTemplate)context.getBean("modulelecturerJdbcTemplate");
+		moduleLecturerJdbcTemplate.createModuleLecturer(1, 1);
+		moduleLecturerJdbcTemplate.updateModuleLecturer(1, 1, 2);
+		moduleLecturerJdbcTemplate.deleteModuleLecturer(1);	
     }
 }
