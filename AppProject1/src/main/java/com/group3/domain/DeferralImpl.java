@@ -21,10 +21,14 @@ public class DeferralImpl implements Deferral{
 	int ID;	
 	String imageAddress;
 	Status status;
-	Student Student;	
-	ModuleLecturer moduleLecture;
-	//Lecturer lecturer;
-	//List<Module> module;
+	int idStatus;
+	Student Student;
+	int idStudent;
+	//ModuleLecturer moduleLecture;
+	List<Module> module;
+	int idDeferralModule;
+	Lecturer lecturer;
+	int idLecturer;
 	boolean isProccesed = false;
 
 	@Override
@@ -52,6 +56,14 @@ public class DeferralImpl implements Deferral{
 		this.status = status;
 	}	
 	@Override	
+	public int getIdStatus() {
+		return idStatus;
+	}
+	@Override
+	public void setIdStatus(int idStatus) {
+		this.idStatus = idStatus;
+	}
+	@Override	
 	public Student getStudent() {
 		return Student;
 	}
@@ -59,37 +71,52 @@ public class DeferralImpl implements Deferral{
 	public void setStudent(Student student) {
 		Student = student;
 	}
-	@Override	
-	public ModuleLecturer getModuleLecture() {
-		return moduleLecture;
+	@Override
+	public int getIdStudent() {
+		return idStudent;
 	}
 	@Override
-	public void setModuleLecture(ModuleLecturer moduleLecture) {
-		this.moduleLecture = moduleLecture;
+	public void setIdStudent(int idStudent) {
+		this.idStudent = idStudent;
 	}
-	
-// ******************************** ? ******************************
+	@Override
+	public List<Module> getModule() {
+		return module;
+	}
+	@Override
+	public void setModule(List<Module> module) {
+		this.module = module;
+	}
+	@Override
+	public int getIdDeferralModule() {
+		return idDeferralModule;
+	}
+	@Override
+	public void setIdDeferralModule(int idDeferralModule) {
+		this.idDeferralModule = idDeferralModule;
+	}
+	@Override
+	public Lecturer getLecturer() {
+		return lecturer;
+	}
+	@Override
+	public void setLecturer(Lecturer lecturer) {
+		this.lecturer = lecturer;
+	}
+	@Override
+	public int getIdLecturer() {
+		return idLecturer;
+	}
+	@Override
+	public void setIdLecturer(int idLecturer) {
+		this.idLecturer = idLecturer;
+	}
+	@Override	
 	public boolean isProccesed() {
 		return isProccesed;
 	}
-
+	@Override
 	public void setProccesed(boolean isProccesed) {
 		this.isProccesed = isProccesed;
 	}
-
-	//public Lecturer getLecturer() {
-	//	return lecturer;
-	//}
-	//public void setLecturer(Lecturer lecturer) {
-	//	this.lecturer = lecturer;
-	//}
-
-	//public List<Module> getModule() {
-	//	return module;
-	//}
-	//public void setModule(List<Module> module) {
-	//	this.module = module;
-	//}
-
-
 }

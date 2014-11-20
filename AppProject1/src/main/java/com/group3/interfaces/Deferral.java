@@ -16,16 +16,22 @@ public interface Deferral {
 	public void setImageAddress(String imageAddress);
 	public Status getStatus() ;
 	public void setStatus(Status status);
+	public int getIdStatus();
+	public void setIdStatus(int status);
 	public Student getStudent() ;
 	public void setStudent(Student student) ;
-	public ModuleLecturer getModuleLecture() ;
-	public void setModuleLecture(ModuleLecturer moduleLecture) ;
-	
-	//public Lecturer getLecturer() ;
-	//public void setLecturer(Lecturer lecturer);
-
-	//public List<Module> getModule();
-	//public void setModule(List<Module> module) ;
+	public int getIdStudent() ;
+	public void setIdStudent(int idStudent) ;	
+	//public ModuleLecturer getModuleLecture() ;
+	//public void setModuleLecture(ModuleLecturer moduleLecture) ;
+	public List<Module> getModule();
+	public void setModule(List<Module> module) ;
+	public int getIdDeferralModule() ;
+	public void setIdDeferralModule(int idDeferralModule) ;	
+	public Lecturer getLecturer() ;
+	public void setLecturer(Lecturer lecturer);
+	public int getIdLecturer() ;
+	public void setIdLecturer(int idLecturer) ;	
 	public boolean isProccesed();
 	public void setProccesed(boolean isProccesed) ;
 
