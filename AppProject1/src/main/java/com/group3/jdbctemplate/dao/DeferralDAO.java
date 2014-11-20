@@ -12,15 +12,15 @@ public interface DeferralDAO {
 	public void setDataSource(DataSource ds);
 
 	// This is the method to be used to create a record in the Deferral table.
-	public int createDeferral(String imageAddress, int idStudent, int idModuleLecture);
+	public int createDeferral(String imageAddress, int idStudent, int idDeferralModule, int idLecture);
 	
 	// This is the method to be used to delete a record from the Deferral table corresponding
 	// to a passed Deferral id.
 	public int deleteDeferral(int id);	
 	
 	// This is the method to be used to update a record into the Deferral table.
-	public int updateDeferral(int id, String imageAddress, int idStudent, int idModuleLecture);
+	public int updateDeferral(int id, String imageAddress, int idStudent, int idDeferralModule, int idLecture);
 	
 	// This is the method to be used to update a record into the Deferral table.
-//public int updateDeferralStatus(Integer id, enum Status);
+	public int updateDeferralStatus(int id, int idStatus);
 }

@@ -23,10 +23,10 @@ public class DeferralJDBCTemplate implements DeferralDAO {
 		}
 
 		@Override
-		public int createDeferral(String imageAddress, int idStudent, int idModuleLecturer) {
-			String SQL = "insert into Deferral (imageAddress, idStudent, idModuleLecturer) values (?, ?, ?)";
-			System.out.println("Created Deferral = " + imageAddress + " " + idStudent + " " + idModuleLecturer);
-			return jdbcTemplateObject.update(SQL, new Object[] { imageAddress, idStudent, idModuleLecturer});		
+		public int createDeferral(String imageAddress, int idStudent, int idDeferralModule, int idLecture) {
+			String SQL = "insert into Deferral (imageAddress, idStudent, idDeferralModule, idLecture) values (?, ?, ?, ?)";
+			System.out.println("Created Deferral = " + imageAddress + " " + idStudent + " " + idDeferralModule + " " +  idLecture);
+			return jdbcTemplateObject.update(SQL, new Object[] { imageAddress, idStudent, idDeferralModule, idLecture});		
 			//return;	
 		}
 
@@ -39,10 +39,18 @@ public class DeferralJDBCTemplate implements DeferralDAO {
 		}
 
 		@Override
-		public int updateDeferral(int id, String imageAddress, int idStudent, int idModuleLecture) {
-			String SQL = "update Deferral set imageAddress = ?, idStudent = ?, idModuleLecturer = ? where id = ?";
+		public int updateDeferral(int id, String imageAddress, int idStudent, int idDeferralModule, int idLecture) {
+			String SQL = "update Deferral set imageAddress = ?, idStudent = ?, idDeferralModule = ?, idLecture = ? where id = ?";
 			System.out.println("Updated Record with ID = " + id );			
-			return jdbcTemplateObject.update(SQL,  new Object[] {imageAddress, idStudent, idModuleLecture, id});
+			return jdbcTemplateObject.update(SQL,  new Object[] {imageAddress, idStudent, idDeferralModule, idLecture, id});
+			//return;	
+		}
+		
+		@Override
+		public int updateDeferralStatus(int id, int idStatus) {
+			String SQL = "update Deferral set idStatus = ? where id = ?";
+			System.out.println("Updated Record with ID = " + id );			
+			return jdbcTemplateObject.update(SQL,  new Object[] {idStatus, id});
 			//return;	
 		}
 // ************************************************ ?? ******************
