@@ -56,11 +56,11 @@ public class App
 //		moduleJdbcTemplate.updateModule(1, "Java 2");
 //		moduleJdbcTemplate.deleteModule(1);	
 		
-		DeferralJDBCTemplate deferralJdbcTemplate=(DeferralJDBCTemplate)context.getBean("deferralJdbcTemplate");
-		deferralJdbcTemplate.createDeferral("About Java", 1, 1,1);
-		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2, 1);
-		deferralJdbcTemplate.updateDeferralStatus(1, 2);		
-		deferralJdbcTemplate.deleteDeferral(1);	
+//		DeferralJDBCTemplate deferralJdbcTemplate=(DeferralJDBCTemplate)context.getBean("deferralJdbcTemplate");
+//		deferralJdbcTemplate.createDeferral("About Java", 1, 1,1);
+//		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2, 1);
+//		deferralJdbcTemplate.updateDeferralStatus(1, 2);		
+//		deferralJdbcTemplate.deleteDeferral(1);	
 		
 //		moduleLecturerJdbcTemplate.createModuleLecturer(1, 1);
 //		moduleLecturerJdbcTemplate.updateModuleLecturer(1, 1, 2);
@@ -70,6 +70,10 @@ public class App
 //		programSemesterModuleLecturerJdbcTemplate.createProgramSemesterModuleLecturer(1, 1);
 //		programSemesterModuleLecturerJdbcTemplate.updateProgramSemesterModuleLecturer(1, 1, 2);
 //		programSemesterModuleLecturerJdbcTemplate.deleteProgramSemesterModuleLecturer(1);	
-		
+
+		DeferralModuleJDBCTemplate deferralModuleJdbcTemplate=(DeferralModuleJDBCTemplate)context.getBean("deferralModuleJdbcTemplate");
+		deferralModuleJdbcTemplate.createDeferralModule(1,1);
+		deferralModuleJdbcTemplate.updateDeferralModule(1, 2, 1);	
+		deferralModuleJdbcTemplate.deleteDeferralModule(1);	
     }
 }

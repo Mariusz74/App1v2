@@ -11,8 +11,11 @@
 		<property name="username" value="test1"/>
 		<property name="password" value="test1"/>
 	</bean>
-
-	        	
+		
+	<bean id="deferralModuleJdbcTemplate" 
+		class="com.group3.jdbctemplate.dao.impl.DeferralModuleJDBCTemplate" 
+		autowire="byType">
+	</bean>  	        	
 		
 	<bean id="studentJdbcTemplate" 
 		class="com.group3.jdbctemplate.dao.impl.StudentJDBCTemplate" 
