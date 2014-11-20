@@ -56,18 +56,20 @@ public class App
 //		moduleJdbcTemplate.updateModule(1, "Java 2");
 //		moduleJdbcTemplate.deleteModule(1);	
 		
-//		deferralJdbcTemplate.createDeferral("About Java", 1, 1);
-//		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2);
-//		deferralJdbcTemplate.deleteDeferral(1);	
+		DeferralJDBCTemplate deferralJdbcTemplate=(DeferralJDBCTemplate)context.getBean("deferralJdbcTemplate");
+		deferralJdbcTemplate.createDeferral("About Java", 1, 1,1);
+		deferralJdbcTemplate.updateDeferral(1, "About Java 2", 1, 2, 1);
+		deferralJdbcTemplate.updateDeferralStatus(1, 2);		
+		deferralJdbcTemplate.deleteDeferral(1);	
 		
 //		moduleLecturerJdbcTemplate.createModuleLecturer(1, 1);
 //		moduleLecturerJdbcTemplate.updateModuleLecturer(1, 1, 2);
 //		moduleLecturerJdbcTemplate.deleteModuleLecturer(1);	
 		
-		ProgramSemesterModuleLecturerJDBCTemplate programSemesterModuleLecturerJdbcTemplate=(ProgramSemesterModuleLecturerJDBCTemplate)context.getBean("programSemesterModuleLecturerJdbcTemplate");
-		programSemesterModuleLecturerJdbcTemplate.createProgramSemesterModuleLecturer(1, 1);
-		programSemesterModuleLecturerJdbcTemplate.updateProgramSemesterModuleLecturer(1, 1, 2);
-		programSemesterModuleLecturerJdbcTemplate.deleteProgramSemesterModuleLecturer(1);	
+//		ProgramSemesterModuleLecturerJDBCTemplate programSemesterModuleLecturerJdbcTemplate=(ProgramSemesterModuleLecturerJDBCTemplate)context.getBean("programSemesterModuleLecturerJdbcTemplate");
+//		programSemesterModuleLecturerJdbcTemplate.createProgramSemesterModuleLecturer(1, 1);
+//		programSemesterModuleLecturerJdbcTemplate.updateProgramSemesterModuleLecturer(1, 1, 2);
+//		programSemesterModuleLecturerJdbcTemplate.deleteProgramSemesterModuleLecturer(1);	
 		
     }
 }

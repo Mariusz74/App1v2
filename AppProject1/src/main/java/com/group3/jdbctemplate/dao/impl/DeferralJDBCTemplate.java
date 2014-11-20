@@ -23,10 +23,10 @@ public class DeferralJDBCTemplate implements DeferralDAO {
 		}
 
 		@Override
-		public int createDeferral(String imageAddress, int idStudent, int idDeferralModule, int idLecture) {
-			String SQL = "insert into Deferral (imageAddress, idStudent, idDeferralModule, idLecture) values (?, ?, ?, ?)";
-			System.out.println("Created Deferral = " + imageAddress + " " + idStudent + " " + idDeferralModule + " " +  idLecture);
-			return jdbcTemplateObject.update(SQL, new Object[] { imageAddress, idStudent, idDeferralModule, idLecture});		
+		public int createDeferral(String imageAddress, int idStudent, int idDeferralModule, int idLecturer) {
+			String SQL = "insert into Deferral (imageAddress, idStudent, idDeferralModule, idLecturer) values (?, ?, ?, ?)";
+			System.out.println("Created Deferral = " + imageAddress + " " + idStudent + " " + idDeferralModule + " " +  idLecturer);
+			return jdbcTemplateObject.update(SQL, new Object[] { imageAddress, idStudent, idDeferralModule, idLecturer});		
 			//return;	
 		}
 
@@ -39,10 +39,10 @@ public class DeferralJDBCTemplate implements DeferralDAO {
 		}
 
 		@Override
-		public int updateDeferral(int id, String imageAddress, int idStudent, int idDeferralModule, int idLecture) {
-			String SQL = "update Deferral set imageAddress = ?, idStudent = ?, idDeferralModule = ?, idLecture = ? where id = ?";
+		public int updateDeferral(int id, String imageAddress, int idStudent, int idDeferralModule, int idLecturer) {
+			String SQL = "update Deferral set imageAddress = ?, idStudent = ?, idDeferralModule = ?, idLecturer = ? where id = ?";
 			System.out.println("Updated Record with ID = " + id );			
-			return jdbcTemplateObject.update(SQL,  new Object[] {imageAddress, idStudent, idDeferralModule, idLecture, id});
+			return jdbcTemplateObject.update(SQL,  new Object[] {imageAddress, idStudent, idDeferralModule, idLecturer, id});
 			//return;	
 		}
 		
